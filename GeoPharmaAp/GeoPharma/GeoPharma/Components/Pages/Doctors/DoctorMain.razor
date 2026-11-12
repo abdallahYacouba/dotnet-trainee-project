@@ -1,0 +1,443 @@
+﻿@page "/doctor"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+
+
+  <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
+    <h1 class="page-title">Médecins</h1>
+    <div class="d-flex align-items-center gap-2">
+      <div class="d-flex gap-1">
+        <button class="view-toggle-btn active" id="btnGrid" onclick="setView('grid')" title="Vue grille">
+          <i class="bi bi-grid-3x3-gap-fill"></i>
+        </button>
+        <button class="view-toggle-btn" id="btnList" onclick="setView('list')" title="Vue liste">
+          <i class="bi bi-list-ul"></i>
+        </button>
+      </div>
+      <button class="btn-save-all"><i class="bi bi-plus-lg"></i> Ajouter</button>
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="table-toolbar mb-4">
+    <div class="table-search-wrap">
+      <i class="bi bi-search table-search-ico"></i>
+      <input type="text" class="table-search" placeholder="Rechercher par nom, département…"/>
+    </div>
+    <div class="d-flex align-items-center gap-2 flex-wrap">
+      <select class="doc-filter">
+        <option value="">Tous les départements</option>
+        <option>Médecine Générale</option>
+        <option>Pédiatrie</option>
+        <option>Chirurgie</option>
+        <option>Cardiologie</option>
+        <option>Gynécologie</option>
+        <option>Urgences</option>
+      </select>
+      <select class="doc-filter">
+        <option value="">Tous les rôles</option>
+        <option>Médecin Chef</option>
+        <option>Médecin Spécialiste</option>
+        <option>Médecin Généraliste</option>
+        <option>Interne</option>
+      </select>
+      <span class="doc-count">8 médecins</span>
+    </div>
+  </div>
+
+  <!-- Doctor Cards Grid -->
+  <div class="doc-grid" id="docGrid">
+
+    <!-- Dr. Moussa Ibrahim -->
+    <div class="doc-card">
+      <div class="doc-card-banner" style="background:linear-gradient(135deg,#0a7c4e,#0fa366);"></div>
+      <div class="doc-card-body">
+        <div class="doc-avatar-wrap">
+          <div class="doc-avatar" style="background:linear-gradient(135deg,#0a7c4e,#0fa366);">MI</div>
+          <span class="doc-badge-role">Médecin Chef</span>
+        </div>
+        <div class="doc-name">Dr. Moussa Ibrahim</div>
+        <div class="doc-dept"><i class="bi bi-hospital"></i> Médecine Générale</div>
+        <div class="doc-location"><i class="bi bi-geo-alt"></i> Niamey, Niger</div>
+        <div class="doc-divider"></div>
+        <div class="doc-contacts">
+          <a href="tel:+22720734512" class="doc-contact-row"><i class="bi bi-telephone-fill"></i> +227 20 73 45 12</a>
+          <a href="/cdn-cgi/l/email-protection#1a77347378687b7273775a6a727b68777b747f6e34747f" class="doc-contact-row"><i class="bi bi-envelope-fill"></i> <span class="__cf_email__" data-cfemail="cba6e5a2a9b9aaa3a2a68bbba3aab9a6aaa5aebfe5a5ae">[email&#160;protected]</span></a>
+        </div>
+      </div>
+      <div class="doc-card-footer">
+        <button class="act-btn" @onclick="NavToDoctorHandler" title="Voir profil"><i class="bi bi-eye"></i></button>
+        <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+        <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+      </div>
+    </div>
+
+    <!-- Dr. Fatoumata Diallo -->
+    <div class="doc-card">
+      <div class="doc-card-banner" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);"></div>
+      <div class="doc-card-body">
+        <div class="doc-avatar-wrap">
+          <div class="doc-avatar" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);">FD</div>
+          <span class="doc-badge-role specialist">Médecin Spécialiste</span>
+        </div>
+        <div class="doc-name">Dr. Fatoumata Diallo</div>
+        <div class="doc-dept"><i class="bi bi-hospital"></i> Pédiatrie</div>
+        <div class="doc-location"><i class="bi bi-geo-alt"></i> Maradi, Niger</div>
+        <div class="doc-divider"></div>
+        <div class="doc-contacts">
+          <a href="tel:+22720411108" class="doc-contact-row"><i class="bi bi-telephone-fill"></i> +227 20 41 11 08</a>
+          <a href="/cdn-cgi/l/email-protection#bfd991dbd6ded3d3d0ffcfd7decdd2ded1dacb91d1da" class="doc-contact-row"><i class="bi bi-envelope-fill"></i> <span class="__cf_email__" data-cfemail="0f69216b666e6363604f7f676e7d626e616a7b21616a">[email&#160;protected]</span></a>
+        </div>
+      </div>
+      <div class="doc-card-footer">
+        <button class="act-btn" title="Voir profil"><i class="bi bi-eye"></i></button>
+        <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+        <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+      </div>
+    </div>
+
+    <!-- Dr. Abdou Mahamane -->
+    <div class="doc-card">
+      <div class="doc-card-banner" style="background:linear-gradient(135deg,#e67e22,#f39c12);"></div>
+      <div class="doc-card-body">
+        <div class="doc-avatar-wrap">
+          <div class="doc-avatar" style="background:linear-gradient(135deg,#e67e22,#f39c12);">AM</div>
+          <span class="doc-badge-role specialist">Médecin Spécialiste</span>
+        </div>
+        <div class="doc-name">Dr. Abdou Mahamane</div>
+        <div class="doc-dept"><i class="bi bi-hospital"></i> Chirurgie</div>
+        <div class="doc-location"><i class="bi bi-geo-alt"></i> Zinder, Niger</div>
+        <div class="doc-divider"></div>
+        <div class="doc-contacts">
+          <a href="tel:+22720440037" class="doc-contact-row"><i class="bi bi-telephone-fill"></i> +227 20 44 00 37</a>
+          <a href="/cdn-cgi/l/email-protection#7617581b171e171b17181336061e17041b17181302581813" class="doc-contact-row"><i class="bi bi-envelope-fill"></i> <span class="__cf_email__" data-cfemail="32531c5f535a535f535c5772425a53405f535c57461c5c57">[email&#160;protected]</span></a>
+        </div>
+      </div>
+      <div class="doc-card-footer">
+        <button class="act-btn" title="Voir profil"><i class="bi bi-eye"></i></button>
+        <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+        <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+      </div>
+    </div>
+
+    <!-- Dr. Halimatou Sidibe -->
+    <div class="doc-card">
+      <div class="doc-card-banner" style="background:linear-gradient(135deg,#c0392b,#e74c3c);"></div>
+      <div class="doc-card-body">
+        <div class="doc-avatar-wrap">
+          <div class="doc-avatar" style="background:linear-gradient(135deg,#c0392b,#e74c3c);">HS</div>
+          <span class="doc-badge-role specialist">Médecin Spécialiste</span>
+        </div>
+        <div class="doc-name">Dr. Halimatou Sidibe</div>
+        <div class="doc-dept"><i class="bi bi-hospital"></i> Gynécologie</div>
+        <div class="doc-location"><i class="bi bi-geo-alt"></i> Dosso, Niger</div>
+        <div class="doc-divider"></div>
+        <div class="doc-contacts">
+          <a href="tel:+22720653314" class="doc-contact-row"><i class="bi bi-telephone-fill"></i> +227 20 65 33 14</a>
+          <a href="/cdn-cgi/l/email-protection#721a5c011b161b101732021a13001f131c17065c1c17" class="doc-contact-row"><i class="bi bi-envelope-fill"></i> <span class="__cf_email__" data-cfemail="9af2b4e9f3fef3f8ffdaeaf2fbe8f7fbf4ffeeb4f4ff">[email&#160;protected]</span></a>
+        </div>
+      </div>
+      <div class="doc-card-footer">
+        <button class="act-btn" title="Voir profil"><i class="bi bi-eye"></i></button>
+        <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+        <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+      </div>
+    </div>
+
+    <!-- Dr. Issoufou Garba -->
+    <div class="doc-card">
+      <div class="doc-card-banner" style="background:linear-gradient(135deg,#2980b9,#3498db);"></div>
+      <div class="doc-card-body">
+        <div class="doc-avatar-wrap">
+          <div class="doc-avatar" style="background:linear-gradient(135deg,#2980b9,#3498db);">IG</div>
+          <span class="doc-badge-role specialist">Médecin Spécialiste</span>
+        </div>
+        <div class="doc-name">Dr. Issoufou Garba</div>
+        <div class="doc-dept"><i class="bi bi-hospital"></i> Cardiologie</div>
+        <div class="doc-location"><i class="bi bi-geo-alt"></i> Tahoua, Niger</div>
+        <div class="doc-divider"></div>
+        <div class="doc-contacts">
+          <a href="tel:+22720610955" class="doc-contact-row"><i class="bi bi-telephone-fill"></i> +227 20 61 09 55</a>
+          <a href="/cdn-cgi/l/email-protection#1e7730797f6c7c7f5e6e767f6c737f707b6a30707b" class="doc-contact-row"><i class="bi bi-envelope-fill"></i> <span class="__cf_email__" data-cfemail="761f58111704141736061e17041b17181302581813">[email&#160;protected]</span></a>
+        </div>
+      </div>
+      <div class="doc-card-footer">
+        <button class="act-btn" title="Voir profil"><i class="bi bi-eye"></i></button>
+        <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+        <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+      </div>
+    </div>
+
+    <!-- Dr. Zeinabou Sani -->
+    <div class="doc-card">
+      <div class="doc-card-banner" style="background:linear-gradient(135deg,#1e8449,#27ae60);"></div>
+      <div class="doc-card-body">
+        <div class="doc-avatar-wrap">
+          <div class="doc-avatar" style="background:linear-gradient(135deg,#1e8449,#27ae60);">ZS</div>
+          <span class="doc-badge-role generalist">Médecin Généraliste</span>
+        </div>
+        <div class="doc-name">Dr. Zeinabou Sani</div>
+        <div class="doc-dept"><i class="bi bi-hospital"></i> Urgences</div>
+        <div class="doc-location"><i class="bi bi-geo-alt"></i> Agadez, Niger</div>
+        <div class="doc-divider"></div>
+        <div class="doc-contacts">
+          <a href="tel:+22720580701" class="doc-contact-row"><i class="bi bi-telephone-fill"></i> +227 20 58 77 01</a>
+          <a href="/cdn-cgi/l/email-protection#6f15411c0e01062f1f070e1d020e010a1b41010a" class="doc-contact-row"><i class="bi bi-envelope-fill"></i> <span class="__cf_email__" data-cfemail="1963376a787770596971786b7478777c6d37777c">[email&#160;protected]</span></a>
+        </div>
+      </div>
+      <div class="doc-card-footer">
+        <button class="act-btn" title="Voir profil"><i class="bi bi-eye"></i></button>
+        <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+        <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+      </div>
+    </div>
+
+    <!-- Dr. Oumarou Boubacar -->
+    <div class="doc-card">
+      <div class="doc-card-banner" style="background:linear-gradient(135deg,#7f8c8d,#95a5a6);"></div>
+      <div class="doc-card-body">
+        <div class="doc-avatar-wrap">
+          <div class="doc-avatar" style="background:linear-gradient(135deg,#7f8c8d,#95a5a6);">OB</div>
+          <span class="doc-badge-role intern">Interne</span>
+        </div>
+        <div class="doc-name">Dr. Oumarou Boubacar</div>
+        <div class="doc-dept"><i class="bi bi-hospital"></i> Médecine Générale</div>
+        <div class="doc-location"><i class="bi bi-geo-alt"></i> Tillabéri, Niger</div>
+        <div class="doc-divider"></div>
+        <div class="doc-contacts">
+          <a href="tel:+22720641842" class="doc-contact-row"><i class="bi bi-telephone-fill"></i> +227 20 64 18 42</a>
+          <a href="/cdn-cgi/l/email-protection#d1beffb3bea4b3b0b2b0a391a1b9b0a3bcb0bfb4a5ffbfb4" class="doc-contact-row"><i class="bi bi-envelope-fill"></i> <span class="__cf_email__" data-cfemail="88e7a6eae7fdeae9ebe9fac8f8e0e9fae5e9e6edfca6e6ed">[email&#160;protected]</span></a>
+        </div>
+      </div>
+      <div class="doc-card-footer">
+        <button class="act-btn" title="Voir profil"><i class="bi bi-eye"></i></button>
+        <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+        <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+      </div>
+    </div>
+
+    <!-- Dr. Aïcha Moumouni -->
+    <div class="doc-card">
+      <div class="doc-card-banner" style="background:linear-gradient(135deg,#d68910,#f0a500);"></div>
+      <div class="doc-card-body">
+        <div class="doc-avatar-wrap">
+          <div class="doc-avatar" style="background:linear-gradient(135deg,#d68910,#f0a500);">AM</div>
+          <span class="doc-badge-role generalist">Médecin Généraliste</span>
+        </div>
+        <div class="doc-name">Dr. Aïcha Moumouni</div>
+        <div class="doc-dept"><i class="bi bi-hospital"></i> Pédiatrie</div>
+        <div class="doc-location"><i class="bi bi-geo-alt"></i> Diffa, Niger</div>
+        <div class="doc-divider"></div>
+        <div class="doc-contacts">
+          <a href="tel:+22720512290" class="doc-contact-row"><i class="bi bi-telephone-fill"></i> +227 20 51 22 90</a>
+          <a href="/cdn-cgi/l/email-protection#10713e7d7f657d7f657e7950607871627d717e75643e7e75" class="doc-contact-row"><i class="bi bi-envelope-fill"></i> <span class="__cf_email__" data-cfemail="5736793a38223a3822393e17273f36253a36393223793932">[email&#160;protected]</span></a>
+        </div>
+      </div>
+      <div class="doc-card-footer">
+        <button class="act-btn" title="Voir profil"><i class="bi bi-eye"></i></button>
+        <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+        <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+      </div>
+    </div>
+
+  </div><!-- /doc-grid -->
+
+  <!-- Doctor Card View -->
+  <div id="docList" >
+    <div class="table-card">
+      <table class="pharma-table">
+        <thead>
+          <tr>
+            <th>Médecin</th>
+            <th>Rôle</th>
+            <th>Département</th>
+            <th>Localisation</th>
+            <th>Téléphone</th>
+            <th class="col-actions">Actions</th>
+          </tr>
+        </thead>
+            <tbody id="docListBody">
+
+                <tr>
+                    <td>
+                        <div class="pharma-name-cell">
+                            <div class="pharma-avatar" style="background:linear-gradient(135deg,#0a7c4e,#0fa366);">MI</div>
+                            <div><div class="pharma-name">Dr. Moussa Ibrahim</div></div>
+                        </div>
+                    </td>
+                    <td><span class="doc-badge-role">Médecin Chef</span></td>
+                    <td>Médecine Générale</td>
+                    <td><i class="bi bi-geo-alt" style="color:var(--blue);"></i> Niamey</td>
+                    <td><a href="tel:+22720734512" style="color:var(--text-mid);text-decoration:none;">+227 20 73 45 12</a></td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="act-btn" title="Voir"><i class="bi bi-eye"></i></button>
+                            <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+                            <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="pharma-name-cell">
+                            <div class="pharma-avatar" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);">FD</div>
+                            <div><div class="pharma-name">Dr. Fatoumata Diallo</div></div>
+                        </div>
+                    </td>
+                    <td><span class="doc-badge-role specialist">Médecin Spécialiste</span></td>
+                    <td>Pédiatrie</td>
+                    <td><i class="bi bi-geo-alt" style="color:var(--blue);"></i> Maradi</td>
+                    <td><a href="tel:+22720411108" style="color:var(--text-mid);text-decoration:none;">+227 20 41 11 08</a></td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="act-btn" title="Voir"><i class="bi bi-eye"></i></button>
+                            <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+                            <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="pharma-name-cell">
+                            <div class="pharma-avatar" style="background:linear-gradient(135deg,#e67e22,#f39c12);">AM</div>
+                            <div><div class="pharma-name">Dr. Abdou Mahamane</div></div>
+                        </div>
+                    </td>
+                    <td><span class="doc-badge-role specialist">Médecin Spécialiste</span></td>
+                    <td>Chirurgie</td>
+                    <td><i class="bi bi-geo-alt" style="color:var(--blue);"></i> Zinder</td>
+                    <td><a href="tel:+22720440037" style="color:var(--text-mid);text-decoration:none;">+227 20 44 00 37</a></td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="act-btn" title="Voir"><i class="bi bi-eye"></i></button>
+                            <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+                            <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="pharma-name-cell">
+                            <div class="pharma-avatar" style="background:linear-gradient(135deg,#c0392b,#e74c3c);">HS</div>
+                            <div><div class="pharma-name">Dr. Halimatou Sidibe</div></div>
+                        </div>
+                    </td>
+                    <td><span class="doc-badge-role specialist">Médecin Spécialiste</span></td>
+                    <td>Gynécologie</td>
+                    <td><i class="bi bi-geo-alt" style="color:var(--blue);"></i> Dosso</td>
+                    <td><a href="tel:+22720653314" style="color:var(--text-mid);text-decoration:none;">+227 20 65 33 14</a></td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="act-btn" title="Voir"><i class="bi bi-eye"></i></button>
+                            <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+                            <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="pharma-name-cell">
+                            <div class="pharma-avatar" style="background:linear-gradient(135deg,#2980b9,#3498db);">IG</div>
+                            <div><div class="pharma-name">Dr. Issoufou Garba</div></div>
+                        </div>
+                    </td>
+                    <td><span class="doc-badge-role specialist">Médecin Spécialiste</span></td>
+                    <td>Cardiologie</td>
+                    <td><i class="bi bi-geo-alt" style="color:var(--blue);"></i> Tahoua</td>
+                    <td><a href="tel:+22720610955" style="color:var(--text-mid);text-decoration:none;">+227 20 61 09 55</a></td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="act-btn" title="Voir"><i class="bi bi-eye"></i></button>
+                            <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+                            <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="pharma-name-cell">
+                            <div class="pharma-avatar" style="background:linear-gradient(135deg,#1e8449,#27ae60);">ZS</div>
+                            <div><div class="pharma-name">Dr. Zeinabou Sani</div></div>
+                        </div>
+                    </td>
+                    <td><span class="doc-badge-role generalist">Médecin Généraliste</span></td>
+                    <td>Urgences</td>
+                    <td><i class="bi bi-geo-alt" style="color:var(--blue);"></i> Agadez</td>
+                    <td><a href="tel:+22720580701" style="color:var(--text-mid);text-decoration:none;">+227 20 58 77 01</a></td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="act-btn" title="Voir"><i class="bi bi-eye"></i></button>
+                            <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+                            <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="pharma-name-cell">
+                            <div class="pharma-avatar" style="background:linear-gradient(135deg,#7f8c8d,#95a5a6);">OB</div>
+                            <div><div class="pharma-name">Dr. Oumarou Boubacar</div></div>
+                        </div>
+                    </td>
+                    <td><span class="doc-badge-role intern">Interne</span></td>
+                    <td>Médecine Générale</td>
+                    <td><i class="bi bi-geo-alt" style="color:var(--blue);"></i> Tillabéri</td>
+                    <td><a href="tel:+22720641842" style="color:var(--text-mid);text-decoration:none;">+227 20 64 18 42</a></td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="act-btn" title="Voir"><i class="bi bi-eye"></i></button>
+                            <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+                            <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="pharma-name-cell">
+                            <div class="pharma-avatar" style="background:linear-gradient(135deg,#d68910,#f0a500);">AM</div>
+                            <div><div class="pharma-name">Dr. Aïcha Moumouni</div></div>
+                        </div>
+                    </td>
+                    <td><span class="doc-badge-role generalist">Médecin Généraliste</span></td>
+                    <td>Pédiatrie</td>
+                    <td><i class="bi bi-geo-alt" style="color:var(--blue);"></i> Diffa</td>
+                    <td><a href="tel:+22720512290" style="color:var(--text-mid);text-decoration:none;">+227 20 51 22 90</a></td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="act-btn" title="Voir"><i class="bi bi-eye"></i></button>
+                            <button class="act-btn" title="Modifier"><i class="bi bi-pencil"></i></button>
+                            <button class="act-btn danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+  <!-- Empty state -->
+  <div id="docEmpty" class="empty-state" style="display:none;">
+    <i class="bi bi-people" style="font-size:2.5rem;color:var(--border-input);"></i>
+    <div style="font-size:var(--fs-base);font-weight:700;color:var(--text-dark);margin-top:8px;">Aucun médecin trouvé</div>
+    <div style="font-size:var(--fs-sm);color:var(--text-soft);">Modifiez vos filtres ou ajoutez un nouveau médecin.</div>
+  </div>
+
+
+
+@code {
+    private void NavToDoctorHandler(MouseEventArgs args)
+    {        
+        Navigation.NavigateTo("/doctor-detail");
+    }
+}

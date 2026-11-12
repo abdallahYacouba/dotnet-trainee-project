@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../MinimalIdentityApp/MinimalIdentityApp.csproj" />
+  <Project Path="MinimalIdentityDemo.csproj" />
+</Solution>

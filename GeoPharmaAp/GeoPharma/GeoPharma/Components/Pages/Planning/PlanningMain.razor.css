@@ -1,0 +1,447 @@
+﻿
+/* Filter bar */
+.filter-bar {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: var(--surface);
+    border: 1.5px solid var(--border-card);
+    border-radius: 10px;
+    padding: 16px 18px;
+    box-shadow: 0 1px 4px rgba(9,30,66,.05);
+}
+
+.filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    min-width: 160px;
+}
+
+.filter-field-btn {
+    flex: 0 0 auto;
+    min-width: unset;
+}
+
+.filter-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+    .filter-label .bi {
+        color: var(--blue);
+    }
+
+.filter-input {
+    height: 36px;
+    padding: 0 12px;
+    font-size: var(--fs-sm);
+    color: var(--text-dark);
+    border: 1.5px solid var(--border-input);
+    border-radius: 6px;
+    background: var(--surface);
+    width: 100%;
+    transition: border .15s;
+}
+
+    .filter-input:focus {
+        outline: none;
+        border-color: var(--blue-focus);
+        box-shadow: 0 0 0 3px var(--blue-light);
+    }
+
+/* Select wrap */
+.select-wrap {
+    position: relative;
+}
+
+    .select-wrap select.filter-input {
+        appearance: none;
+        padding-right: 30px;
+        cursor: pointer;
+    }
+
+.select-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--fs-xs);
+    color: var(--text-soft);
+    pointer-events: none;
+}
+
+/* Validate button */
+.btn-filter-validate {
+    height: 36px;
+    padding: 0 18px;
+    background: var(--blue);
+    color: var(--surface);
+    border: none;
+    border-radius: 6px;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+    transition: background .15s;
+}
+
+    .btn-filter-validate:hover {
+        background: var(--blue-hover);
+    }
+
+/* Save all button */
+.btn-save-all {
+    height: 36px;
+    padding: 0 16px;
+    background: var(--blue);
+    color: var(--surface);
+    border: none;
+    border-radius: 6px;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(10,124,78,.2);
+    transition: background .15s, transform .1s;
+}
+
+    .btn-save-all:hover {
+        background: var(--blue-hover);
+        transform: translateY(-1px);
+    }
+
+/* Toolbar */
+.table-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.table-search-wrap {
+    position: relative;
+    flex: 1;
+    max-width: 360px;
+}
+
+.table-search-ico {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-soft);
+    font-size: var(--fs-base);
+    pointer-events: none;
+}
+
+.table-search {
+    width: 100%;
+    height: 34px;
+    padding: 0 12px 0 34px;
+    font-size: var(--fs-sm);
+    color: var(--text-dark);
+    border: 1.5px solid var(--border-input);
+    border-radius: 6px;
+    background: var(--surface);
+    transition: border .15s;
+}
+
+    .table-search:focus {
+        outline: none;
+        border-color: var(--blue-focus);
+        box-shadow: 0 0 0 3px var(--blue-light);
+    }
+
+.toolbar-btn {
+    height: 32px;
+    padding: 0 11px;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    border: 1.5px solid var(--border-input);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text-mid);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background .15s;
+}
+
+    .toolbar-btn:hover {
+        background: var(--bg-hover);
+    }
+
+.selected-count {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--blue);
+    min-width: 80px;
+}
+
+
+/* Table */
+.table-card {
+    background: var(--surface);
+    border: 1.5px solid var(--border-card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(9,30,66,.05);
+}
+
+.pharma-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--fs-sm);
+}
+
+    .pharma-table thead tr {
+        background: var(--bg-page);
+        border-bottom: 2px solid var(--border-card);
+    }
+
+    .pharma-table th {
+        padding: 11px 14px;
+        font-size: var(--fs-xs);
+        font-weight: 700;
+        color: var(--text-soft);
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        white-space: nowrap;
+        user-select: none;
+    }
+
+        .pharma-table th.sortable {
+            cursor: pointer;
+        }
+
+            .pharma-table th.sortable:hover {
+                color: var(--text-dark);
+            }
+
+.sort-icon {
+    font-size: var(--fs-2xs);
+    margin-left: 4px;
+    opacity: .5;
+}
+
+.col-check {
+    width: 48px;
+    text-align: center;
+}
+
+.pharma-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background .12s;
+}
+
+    .pharma-table tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    .pharma-table tbody tr:hover {
+        background: var(--bg-hover);
+    }
+
+    .pharma-table tbody tr.selected {
+        background: var(--blue-light);
+    }
+
+.pharma-table td {
+    padding: 12px 14px;
+    color: var(--text-mid);
+    vertical-align: middle;
+}
+
+.custom-check {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--blue);
+}
+
+.pharma-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pharma-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: var(--fs-xs);
+    font-weight: 800;
+}
+
+.pharma-name {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.pharma-id {
+    font-size: var(--fs-2xs);
+    color: var(--text-soft);
+    margin-top: 1px;
+}
+
+/* Guard badges */
+.guard-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+}
+
+    .guard-badge::before {
+        content: '';
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .guard-badge.on {
+        background: var(--green-light);
+        color: var(--green-dark);
+    }
+
+        .guard-badge.on::before {
+            background: var(--green);
+            animation: gpulse 1.5s infinite;
+        }
+
+    .guard-badge.off {
+        background: var(--bg-hover);
+        color: var(--text-soft);
+    }
+
+        .guard-badge.off::before {
+            background: var(--text-soft);
+        }
+
+@keyframes gpulse {
+    0%,100% {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    50% {
+        opacity: .5;
+        transform: scale(.8)
+    }
+}
+
+/* Table footer */
+.table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-top: 1.5px solid var(--border);
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.table-info {
+    font-size: var(--fs-sm);
+    color: var(--text-soft);
+}
+
+.guard-summary {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--green-dark);
+    background: var(--green-light);
+    padding: 3px 12px;
+    border-radius: 20px;
+}
+
+
+/* Empty state */
+.empty-state {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Toast */
+.toast-success {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    background: var(--green);
+    color: #fff;
+    padding: 13px 20px;
+    border-radius: 8px;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.18);
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all .3s ease;
+    pointer-events: none;
+}
+
+    .toast-success.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+@media (max-width: 767px) {
+    .filter-bar {
+        flex-direction: column;
+    }
+
+    .filter-field {
+        min-width: 100%;
+    }
+
+    .table-card {
+        overflow-x: auto;
+    }
+
+    .pharma-table {
+        min-width: 520px;
+    }
+
+    .table-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .table-search-wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+}

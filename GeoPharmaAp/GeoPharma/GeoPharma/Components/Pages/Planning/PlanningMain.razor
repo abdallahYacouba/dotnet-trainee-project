@@ -1,0 +1,198 @@
+﻿@page "/planning"
+
+<!-- Page header -->
+<div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
+    <h1 class="page-title">Pharmacies de Garde</h1>
+    <button class="btn-save-all" id="btnSaveAll" onclick="saveAll()">
+        <i class="bi bi-check2-circle"></i> Enregistrer tout
+    </button>
+</div>
+
+<!-- Filter bar -->
+<div class="filter-bar mb-4">
+
+    <div class="filter-field">
+        <label class="filter-label" for="dateDebut"><i class="bi bi-calendar-event"></i> Date début</label>
+        <input type="date" id="dateDebut" class="filter-input" />
+    </div>
+
+    <div class="filter-field">
+        <label class="filter-label" for="dateFin"><i class="bi bi-calendar-check"></i> Date fin</label>
+        <input type="date" id="dateFin" class="filter-input" />
+    </div>
+
+    <div class="filter-field">
+        <label class="filter-label" for="regionSelect"><i class="bi bi-geo-alt"></i> Région</label>
+        <div class="select-wrap">
+            <select id="regionSelect" class="filter-input">
+                <option value="">Toutes les régions</option>
+                <option value="niamey">Niamey</option>
+                <option value="agadez">Agadez</option>
+                <option value="diffa">Diffa</option>
+                <option value="dosso">Dosso</option>
+                <option value="maradi">Maradi</option>
+                <option value="tahoua">Tahoua</option>
+                <option value="tillaberi">Tillabéri</option>
+                <option value="zinder">Zinder</option>
+            </select>
+            <i class="bi bi-chevron-down select-arrow"></i>
+        </div>
+    </div>
+
+    <div class="filter-field filter-field-btn">
+        <label class="filter-label" style="opacity:0;">&#8203;</label>
+        <button class="btn-filter-validate" onclick="validateFilter()">
+            <i class="bi bi-funnel-fill"></i> Filtrer
+        </button>
+    </div>
+
+</div>
+
+<!-- Toolbar -->
+<div class="table-toolbar mb-3">
+    <div class="table-search-wrap">
+        <i class="bi bi-search table-search-ico"></i>
+        <input type="text" class="table-search" id="tableSearch" placeholder="Rechercher par nom, district…" oninput="filterTable()" />
+    </div>
+    <div class="d-flex align-items-center gap-2">
+        <span class="selected-count" id="selectedCount"></span>
+        <button class="toolbar-btn" onclick="selectAll()"><i class="bi bi-check2-all"></i> Tout cocher</button>
+        <button class="toolbar-btn" onclick="deselectAll()"><i class="bi bi-square"></i> Tout décocher</button>
+    </div>
+</div>
+
+<!-- Table -->
+<div class="table-card">
+    <table class="pharma-table" id="pharmaTable">
+        <thead>
+            <tr>
+                <th class="col-check">
+                    <input type="checkbox" class="custom-check" id="checkAll" onchange="toggleAll(this)" title="Sélectionner tout" />
+                </th>
+                <th class="sortable" onclick="sortTable(1)">Nom de la pharmacie <i class="bi bi-arrow-down-up sort-icon"></i></th>
+                <th class="sortable" onclick="sortTable(2)">District <i class="bi bi-arrow-down-up sort-icon"></i></th>
+                <th>Statut de garde</th>
+            </tr>
+        </thead>
+        <tbody id="pharmaBody">
+
+            <tr>
+                <td class="col-check"><input type="checkbox" class="custom-check row-check" onchange="onRowCheck()" /></td>
+                <td>
+                    <div class="pharma-name-cell">
+                        <div class="pharma-avatar" style="background:linear-gradient(135deg,#0a7c4e,#0fa366);">PC</div>
+                        <div><div class="pharma-name">Pharmacie Centrale Niamey</div><div class="pharma-id">#PHM-001</div></div>
+                    </div>
+                </td>
+                <td>District Niamey I</td>
+                <td><span class="guard-badge off">Hors garde</span></td>
+            </tr>
+
+            <tr>
+                <td class="col-check"><input type="checkbox" class="custom-check row-check" onchange="onRowCheck()" /></td>
+                <td>
+                    <div class="pharma-name-cell">
+                        <div class="pharma-avatar" style="background:linear-gradient(135deg,#e67e22,#f39c12);">PM</div>
+                        <div><div class="pharma-name">Pharmacie du Marché</div><div class="pharma-id">#PHM-002</div></div>
+                    </div>
+                </td>
+                <td>District Maradi Centre</td>
+                <td><span class="guard-badge on">En garde</span></td>
+            </tr>
+
+            <tr>
+                <td class="col-check"><input type="checkbox" class="custom-check row-check" onchange="onRowCheck()" /></td>
+                <td>
+                    <div class="pharma-name-cell">
+                        <div class="pharma-avatar" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);">PS</div>
+                        <div><div class="pharma-name">Pharmacie du Sahel</div><div class="pharma-id">#PHM-003</div></div>
+                    </div>
+                </td>
+                <td>District Agadez</td>
+                <td><span class="guard-badge off">Hors garde</span></td>
+            </tr>
+
+            <tr>
+                <td class="col-check"><input type="checkbox" class="custom-check row-check" onchange="onRowCheck()" /></td>
+                <td>
+                    <div class="pharma-name-cell">
+                        <div class="pharma-avatar" style="background:linear-gradient(135deg,#2980b9,#3498db);">PZ</div>
+                        <div><div class="pharma-name">Pharmacie Zinder Sud</div><div class="pharma-id">#PHM-004</div></div>
+                    </div>
+                </td>
+                <td>District Zinder Ville</td>
+                <td><span class="guard-badge off">Hors garde</span></td>
+            </tr>
+
+            <tr>
+                <td class="col-check"><input type="checkbox" class="custom-check row-check" onchange="onRowCheck()" /></td>
+                <td>
+                    <div class="pharma-name-cell">
+                        <div class="pharma-avatar" style="background:linear-gradient(135deg,#c0392b,#e74c3c);">PD</div>
+                        <div><div class="pharma-name">Pharmacie Dosso Est</div><div class="pharma-id">#PHM-005</div></div>
+                    </div>
+                </td>
+                <td>District Dosso</td>
+                <td><span class="guard-badge on">En garde</span></td>
+            </tr>
+
+            <tr>
+                <td class="col-check"><input type="checkbox" class="custom-check row-check" onchange="onRowCheck()" /></td>
+                <td>
+                    <div class="pharma-name-cell">
+                        <div class="pharma-avatar" style="background:linear-gradient(135deg,#1e8449,#27ae60);">PT</div>
+                        <div><div class="pharma-name">Pharmacie Tahoua Nord</div><div class="pharma-id">#PHM-006</div></div>
+                    </div>
+                </td>
+                <td>District Tahoua I</td>
+                <td><span class="guard-badge off">Hors garde</span></td>
+            </tr>
+
+            <tr>
+                <td class="col-check"><input type="checkbox" class="custom-check row-check" onchange="onRowCheck()" /></td>
+                <td>
+                    <div class="pharma-name-cell">
+                        <div class="pharma-avatar" style="background:linear-gradient(135deg,#d68910,#f0a500);">PF</div>
+                        <div><div class="pharma-name">Pharmacie Filingué</div><div class="pharma-id">#PHM-007</div></div>
+                    </div>
+                </td>
+                <td>District Filingué</td>
+                <td><span class="guard-badge off">Hors garde</span></td>
+            </tr>
+
+            <tr>
+                <td class="col-check"><input type="checkbox" class="custom-check row-check" onchange="onRowCheck()" /></td>
+                <td>
+                    <div class="pharma-name-cell">
+                        <div class="pharma-avatar" style="background:linear-gradient(135deg,#7f8c8d,#95a5a6);">PB</div>
+                        <div><div class="pharma-name">Pharmacie Birni</div><div class="pharma-id">#PHM-008</div></div>
+                    </div>
+                </td>
+                <td>District Birni N'Konni</td>
+                <td><span class="guard-badge on">En garde</span></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <!-- Empty state -->
+    <div class="empty-state" id="emptyState" style="display:none;">
+        <i class="bi bi-search" style="font-size:32px;color:var(--text-soft);"></i>
+        <p style="color:var(--text-soft);font-size:var(--fs-base);margin:8px 0 0;">Aucune pharmacie trouvée</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="table-footer">
+        <span class="table-info" id="tableInfo">8 pharmacies</span>
+        <span class="guard-summary" id="guardSummary">3 en garde</span>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast-success" id="toast">
+    <i class="bi bi-check-circle-fill"></i> <span id="toastMsg"></span>
+</div>
+
+@code {
+
+}

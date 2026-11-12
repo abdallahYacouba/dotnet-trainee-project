@@ -1,0 +1,55 @@
+﻿@using NextDevAsp.UI.Models
+
+
+<div class="card border-0 rounded-0">
+    <div class="card-header d-flex align-items-center text-dark py-3 px-3">
+        <div class="avatar-circle me-3">
+            <span id="initial-placeholder">@TeamMember.Initial</span>
+        </div>
+        <div>
+            <h5 class="mb-0" id="full-name-placeholder">@TeamMember.FullName</h5>
+            <p class="mb-0 small opacity-75" id="title-placeholder">@TeamMember.Title</p>
+        </div>
+        <span class="ms-auto badge rounded-pill status-badge bg-success" id="status-placeholder">
+            <i class="bi bi-pencil-square" title="edit"></i>
+        </span>
+    </div>
+
+    <div class="card-body">
+        <div class="mb-3">
+            <i class="bi bi-people-fill me-2 icon-color"></i>
+            <strong class="text-secondary">Group:</strong>
+            <span id="group-name-placeholder">@TeamMember.GroupName</span>
+        </div>
+
+        <p class="card-text text-muted small border-start border-3 border-secondary ps-2" id="description-placeholder">
+            Specializes in cloud infrastructure and DevOps.
+        </p>
+
+        <hr>
+
+        <ul class="list-unstyled contact-list">
+            <li class="mb-2">
+                <i class="bi bi-envelope-fill me-2 icon-color"></i>
+                <span id="email-placeholder">@TeamMember.Email</span>
+            </li>
+            <li class="mb-2">
+                <i class="bi bi-telephone-fill me-2 icon-color"></i>
+                <span id="phone-placeholder">@TeamMember.Phone</span>
+            </li>
+            <li>
+                <i class="bi bi-geo-alt-fill me-2 icon-color"></i>
+                <span id="address-placeholder">@TeamMember.Address</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card-footer text-end p-2 bg-light">
+        <small class="text-muted">ID: <span id="id-placeholder">@TeamMember.Id</span></small>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public TeamMember? TeamMember { get; set; }
+}

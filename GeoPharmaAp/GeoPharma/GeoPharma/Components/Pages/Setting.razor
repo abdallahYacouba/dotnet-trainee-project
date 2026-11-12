@@ -1,0 +1,412 @@
+﻿@page "/setting"
+
+<h1 class="page-title" >Paramètres</h1>
+
+<!-- Tab bar -->
+<div class="settings-tabbar">
+    <button class="settings-tab active" onclick="showTab('apparence',this)"><i class="bi bi-palette-fill"></i> Apparence</button>
+    <button class="settings-tab" onclick="showTab('compte',this)"><i class="bi bi-person-fill"></i> Compte</button>
+    <button class="settings-tab" onclick="showTab('notifications',this)"><i class="bi bi-bell-fill"></i> Notifications</button>
+    <button class="settings-tab" onclick="showTab('securite',this)"><i class="bi bi-shield-lock-fill"></i> Sécurité</button>
+    <button class="settings-tab" onclick="showTab('langue',this)"><i class="bi bi-translate"></i> Langue &amp; région</button>
+</div>
+
+<!-- ═══════════ APPARENCE ═══════════ -->
+<div class="settings-panel" id="tab-apparence">
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-palette-fill"></i> Couleur principale de l'application</div>
+        <div class="settings-card-body">
+            <p class="settings-desc mb-3">Choisissez la couleur utilisée pour les boutons, liens, badges actifs et éléments de navigation dans toute l'application.</p>
+            <div class="color-swatches mb-4">
+                <button class="swatch selected" data-color="#0a7c4e" data-name="Vert Pharmacie" style="background:#0a7c4e;" title="Vert Pharmacie"><i class="bi bi-check-lg swatch-check"></i></button>
+                <button class="swatch" data-color="#0c66e4" data-name="Bleu Atlassian" style="background:#0c66e4;" title="Bleu Atlassian"><i class="bi bi-check-lg swatch-check"></i></button>
+                <button class="swatch" data-color="#6e5dc6" data-name="Violet" style="background:#6e5dc6;" title="Violet"><i class="bi bi-check-lg swatch-check"></i></button>
+                <button class="swatch" data-color="#c0392b" data-name="Rouge sang" style="background:#c0392b;" title="Rouge sang"><i class="bi bi-check-lg swatch-check"></i></button>
+                <button class="swatch" data-color="#2980b9" data-name="Bleu ciel" style="background:#2980b9;" title="Bleu ciel"><i class="bi bi-check-lg swatch-check"></i></button>
+                <button class="swatch" data-color="#d68910" data-name="Ambre" style="background:#d68910;" title="Ambre"><i class="bi bi-check-lg swatch-check"></i></button>
+                <button class="swatch" data-color="#1e8449" data-name="Vert forêt" style="background:#1e8449;" title="Vert forêt"><i class="bi bi-check-lg swatch-check"></i></button>
+                <button class="swatch" data-color="#7f8c8d" data-name="Gris ardoise" style="background:#7f8c8d;" title="Gris ardoise"><i class="bi bi-check-lg swatch-check"></i></button>
+            </div>
+            <div class="mb-3">
+                <label class="settings-label" for="customColor">Couleur personnalisée</label>
+                <div class="color-picker-wrap">
+                    <input type="color" id="customColor" class="color-picker-input" value="#0a7c4e" oninput="applyColor(this.value,null)" />
+                    <div class="color-picker-preview" id="colorPreviewBox" style="background:#0a7c4e;"></div>
+                    <span class="color-hex-label" id="colorHexLabel">#0a7c4e</span>
+                </div>
+            </div>
+            <label class="settings-label mb-2">Aperçu en temps réel</label>
+            <div class="preview-box">
+                <div class="d-flex align-items-center gap-3 flex-wrap">
+                    <button class="preview-btn-primary">Enregistrer</button>
+                    <button class="preview-btn-outline">Modifier</button>
+                    <span class="preview-badge">Active</span>
+                    <span class="preview-link">Voir les détails →</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 mt-3">
+                    <div class="preview-avatar">A</div>
+                    <div class="preview-nav-item"><i class="bi bi-hospital"></i> Pharmacies</div>
+                    <div class="preview-checkbox"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-moon-stars-fill"></i> Thème visuel</div>
+        <div class="settings-card-body">
+            <p class="settings-desc mb-3">Sélectionnez le thème d'affichage de l'application. Le mode automatique suit les préférences de votre système.</p>
+            <div class="theme-options mb-4">
+                <div class="theme-option active" onclick="setTheme('light',this)">
+                    <div class="theme-preview light-preview"><div class="tp-bar"></div><div class="tp-body"><div class="tp-card"></div><div class="tp-card"></div></div></div>
+                    <span><i class="bi bi-sun"></i> Clair</span>
+                </div>
+                <div class="theme-option" onclick="setTheme('dark',this)">
+                    <div class="theme-preview dark-preview"><div class="tp-bar"></div><div class="tp-body"><div class="tp-card"></div><div class="tp-card"></div></div></div>
+                    <span><i class="bi bi-moon-stars"></i> Sombre</span>
+                </div>
+                <div class="theme-option" onclick="setTheme('auto',this)">
+                    <div class="theme-preview auto-preview"><div class="tp-bar"></div><div class="tp-body"><div class="tp-card"></div><div class="tp-card"></div></div></div>
+                    <span><i class="bi bi-circle-half"></i> Automatique</span>
+                </div>
+            </div>
+            <div class="toggle-row">
+                <div><div class="settings-label">Animations de l'interface</div><div class="settings-desc">Activer les transitions et effets de survol sur les éléments interactifs.</div></div>
+                <label class="toggle-switch"><input type="checkbox" checked /><span class="toggle-knob"></span></label>
+            </div>
+            <div class="toggle-row">
+                <div><div class="settings-label">Coins arrondis</div><div class="settings-desc">Appliquer des bords arrondis sur les cartes, boutons et champs de saisie.</div></div>
+                <label class="toggle-switch"><input type="checkbox" checked /><span class="toggle-knob"></span></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-layout-sidebar-inset"></i> Disposition &amp; densité</div>
+        <div class="settings-card-body">
+            <div class="row g-4">
+                <div class="col-12 col-sm-6">
+                    <label class="settings-label">Largeur de la barre latérale</label>
+                    <div class="settings-desc mb-2">Valeur actuelle : <strong id="sidebarWidthVal">260</strong> px</div>
+                    <input type="range" id="sidebarWidthRange" min="200" max="340" step="10" value="260" class="settings-range" oninput="applySidebarWidth(this.value)" />
+                    <div class="d-flex justify-content-between mt-1" style="font-size:var(--fs-2xs);color:var(--text-soft);"><span>200 px</span><span>340 px</span></div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <label class="settings-label">Densité d'affichage</label>
+                    <div class="settings-desc mb-2">Ajuste l'espacement des tableaux et des listes.</div>
+                    <div class="density-group">
+                        <button class="density-btn active" onclick="setDensity('compact',this)"><i class="bi bi-list"></i> Compact</button>
+                        <button class="density-btn" onclick="setDensity('normal',this)"><i class="bi bi-list-ul"></i> Normal</button>
+                        <button class="density-btn" onclick="setDensity('relaxed',this)"><i class="bi bi-layout-split"></i> Espacé</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ═══════════ COMPTE ═══════════ -->
+<div class="settings-panel d-none" id="tab-compte">
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-person-circle"></i> Informations personnelles</div>
+        <div class="settings-card-body">
+            <div class="profile-edit-row">
+                <div class="profile-edit-avatar">AD</div>
+                <div>
+                    <div class="settings-label" style="margin-bottom:3px;">Photo de profil</div>
+                    <div class="settings-desc mb-2">Format JPG ou PNG, taille maximale 2 Mo.</div>
+                    <button class="settings-outline-btn"><i class="bi bi-upload"></i> Changer la photo</button>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label class="settings-label">Prénom</label>
+                    <input type="text" class="settings-input" value="Administrateur" />
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Nom de famille</label>
+                    <input type="text" class="settings-input" value="PharmaNet" />
+                </div>
+                <div class="col-12">
+                    <label class="settings-label">Adresse e-mail</label>
+                    <input type="email" class="settings-input" value="admin@pharmanet.ne" />
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Téléphone principal</label>
+                    <input type="tel" class="settings-input" value="+227 20 73 45 00" />
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Téléphone secondaire</label>
+                    <input type="tel" class="settings-input" placeholder="+227 XX XX XX XX" />
+                </div>
+                <div class="col-12">
+                    <label class="settings-label">Biographie courte</label>
+                    <textarea class="settings-input" rows="3" style="height:auto;resize:vertical;" placeholder="Décrivez votre rôle dans l'organisation…"></textarea>
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                    <button class="settings-save-btn">Enregistrer les modifications</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-briefcase-fill"></i> Informations professionnelles</div>
+        <div class="settings-card-body">
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label class="settings-label">Rôle</label>
+                    <input type="text" class="settings-input" value="Super Administrateur" readonly style="opacity:.6;cursor:not-allowed;" />
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Organisation</label>
+                    <input type="text" class="settings-input" value="Ministère de la Santé — Niger" />
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Région affectée</label>
+                    <select class="settings-input">
+                        <option selected>Toutes les régions</option>
+                        <option>Niamey</option>
+                        <option>Agadez</option>
+                        <option>Diffa</option>
+                        <option>Dosso</option>
+                        <option>Maradi</option>
+                        <option>Tahoua</option>
+                        <option>Tillabéri</option>
+                        <option>Zinder</option>
+                    </select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Identifiant employé</label>
+                    <input type="text" class="settings-input" value="EMP-2024-0001" readonly style="opacity:.6;cursor:not-allowed;" />
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                    <button class="settings-save-btn">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ═══════════ NOTIFICATIONS ═══════════ -->
+<div class="settings-panel d-none" id="tab-notifications">
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-exclamation-triangle-fill"></i> Alertes de stock &amp; médicaments</div>
+        <div class="settings-card-body">
+            <div class="notif-row">
+                <div class="notif-icon" style="background:#fdecea;color:#e53935;"><i class="bi bi-exclamation-triangle-fill"></i></div>
+                <div class="notif-info"><div class="settings-label">Stock critique</div><div class="settings-desc">Notifier immédiatement quand un produit tombe sous le seuil minimum de stock.</div></div>
+                <label class="toggle-switch"><input type="checkbox" checked /><span class="toggle-knob"></span></label>
+            </div>
+            <div class="notif-row">
+                <div class="notif-icon" style="background:#fff8e1;color:#b7860b;"><i class="bi bi-calendar-x-fill"></i></div>
+                <div class="notif-info"><div class="settings-label">Expiration de médicaments</div><div class="settings-desc">Alerter 30 jours avant la date de péremption d'un produit.</div></div>
+                <label class="toggle-switch"><input type="checkbox" checked /><span class="toggle-knob"></span></label>
+            </div>
+            <div class="notif-row">
+                <div class="notif-icon" style="background:#e6f4ee;color:var(--blue);"><i class="bi bi-arrow-repeat"></i></div>
+                <div class="notif-info"><div class="settings-label">Réapprovisionnement disponible</div><div class="settings-desc">Notifier quand une commande fournisseur est prête à la réception.</div></div>
+                <label class="toggle-switch"><input type="checkbox" /><span class="toggle-knob"></span></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-cart-fill"></i> Commandes &amp; livraisons</div>
+        <div class="settings-card-body">
+            <div class="notif-row">
+                <div class="notif-icon" style="background:#e3f5ff;color:#2980b9;"><i class="bi bi-cart-check-fill"></i></div>
+                <div class="notif-info"><div class="settings-label">Nouvelle commande reçue</div><div class="settings-desc">Recevoir une notification à chaque nouvelle commande créée dans le système.</div></div>
+                <label class="toggle-switch"><input type="checkbox" checked /><span class="toggle-knob"></span></label>
+            </div>
+            <div class="notif-row">
+                <div class="notif-icon" style="background:#e6f4ee;color:var(--blue);"><i class="bi bi-truck"></i></div>
+                <div class="notif-info"><div class="settings-label">Mise à jour de livraison</div><div class="settings-desc">Suivre l'avancement des livraisons en cours en temps réel.</div></div>
+                <label class="toggle-switch"><input type="checkbox" checked /><span class="toggle-knob"></span></label>
+            </div>
+            <div class="notif-row">
+                <div class="notif-icon" style="background:#fdecea;color:#e53935;"><i class="bi bi-x-circle-fill"></i></div>
+                <div class="notif-info"><div class="settings-label">Commande annulée</div><div class="settings-desc">Recevoir une alerte immédiate en cas d'annulation de commande.</div></div>
+                <label class="toggle-switch"><input type="checkbox" checked /><span class="toggle-knob"></span></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-envelope-fill"></i> Canal &amp; fréquence</div>
+        <div class="settings-card-body">
+            <div class="row g-3">
+                <div class="col-12">
+                    <label class="settings-label">Fréquence des résumés</label>
+                    <select class="settings-input">
+                        <option>En temps réel</option>
+                        <option selected>Résumé quotidien (08h00)</option>
+                        <option>Résumé hebdomadaire (lundi)</option>
+                        <option>Désactiver les résumés</option>
+                    </select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">E-mail de notification</label>
+                    <input type="email" class="settings-input" value="admin@pharmanet.ne" />
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Numéro SMS</label>
+                    <input type="tel" class="settings-input" value="+227 20 73 45 00" />
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                    <button class="settings-save-btn">Enregistrer les préférences</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ═══════════ SÉCURITÉ ═══════════ -->
+<div class="settings-panel d-none" id="tab-securite">
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-key-fill"></i> Modification du mot de passe</div>
+        <div class="settings-card-body">
+            <div class="row g-3">
+                <div class="col-12">
+                    <label class="settings-label">Mot de passe actuel</label>
+                    <div class="pwd-wrap"><input type="password" id="oldPwd" class="settings-input" placeholder="Entrez votre mot de passe actuel" /><button class="pwd-eye" onclick="togglePwd('oldPwd',this)"><i class="bi bi-eye"></i></button></div>
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Nouveau mot de passe</label>
+                    <div class="pwd-wrap"><input type="password" id="newPwd" class="settings-input" placeholder="8 caractères minimum" oninput="checkStrength(this.value)" /><button class="pwd-eye" onclick="togglePwd('newPwd',this)"><i class="bi bi-eye"></i></button></div>
+                    <div class="pwd-strength"><div class="pwd-bar" id="pwdBar"></div></div>
+                    <div class="settings-desc mt-1" id="pwdLabel">Entrez un mot de passe</div>
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Confirmer le nouveau mot de passe</label>
+                    <div class="pwd-wrap"><input type="password" id="confPwd" class="settings-input" placeholder="Répétez le mot de passe" /><button class="pwd-eye" onclick="togglePwd('confPwd',this)"><i class="bi bi-eye"></i></button></div>
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                    <button class="settings-save-btn">Mettre à jour le mot de passe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-shield-check-fill"></i> Authentification à deux facteurs (2FA)</div>
+        <div class="settings-card-body">
+            <div class="toggle-row">
+                <div><div class="settings-label">Activer la 2FA</div><div class="settings-desc">Protégez votre compte avec une vérification par SMS ou application d'authentification (Google Authenticator, Authy).</div></div>
+                <label class="toggle-switch"><input type="checkbox" /><span class="toggle-knob"></span></label>
+            </div>
+            <div class="toggle-row">
+                <div><div class="settings-label">Méthode préférée</div><div class="settings-desc">SMS vers +227 20 73 45 00</div></div>
+                <button class="settings-outline-btn"><i class="bi bi-gear"></i> Configurer</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-activity"></i> Sessions actives</div>
+        <div class="settings-card-body" style="padding:0;">
+            <div class="session-row">
+                <div class="session-icon"><i class="bi bi-laptop"></i></div>
+                <div class="session-info"><div class="settings-label">Chrome — Windows 11</div><div class="settings-desc">Niamey, Niger · Session actuelle</div></div>
+                <span class="session-badge active">En cours</span>
+            </div>
+            <div class="session-row">
+                <div class="session-icon"><i class="bi bi-phone"></i></div>
+                <div class="session-info"><div class="settings-label">Safari — iPhone 14</div><div class="settings-desc">Niamey, Niger · Il y a 2 heures</div></div>
+                <button class="settings-outline-btn sm">Révoquer</button>
+            </div>
+            <div class="session-row">
+                <div class="session-icon"><i class="bi bi-display"></i></div>
+                <div class="session-info"><div class="settings-label">Firefox — Ubuntu 22</div><div class="settings-desc">Maradi, Niger · Hier à 14h22</div></div>
+                <button class="settings-outline-btn sm">Révoquer</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ═══════════ LANGUE & RÉGION ═══════════ -->
+<div class="settings-panel d-none" id="tab-langue">
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-translate"></i> Langue de l'interface</div>
+        <div class="settings-card-body">
+            <p class="settings-desc mb-3">Choisissez la langue dans laquelle l'interface de PharmaNet sera affichée.</p>
+            <div class="lang-grid">
+                <label class="lang-option sel" onclick="selectLang(this)"><input type="radio" name="lang" checked /><span class="lang-flag">🇫🇷</span><span>Français</span></label>
+                <label class="lang-option" onclick="selectLang(this)"><input type="radio" name="lang" /><span class="lang-flag">🇬🇧</span><span>English</span></label>
+                <label class="lang-option" onclick="selectLang(this)"><input type="radio" name="lang" /><span class="lang-flag">🇳🇪</span><span>Hausa</span></label>
+                <label class="lang-option" onclick="selectLang(this)"><input type="radio" name="lang" /><span class="lang-flag">🇸🇦</span><span>العربية</span></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-globe2"></i> Région &amp; formats</div>
+        <div class="settings-card-body">
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label class="settings-label">Pays</label>
+                    <select class="settings-input"><option selected>🇳🇪 Niger</option><option>🇫🇷 France</option><option>🇨🇮 Côte d'Ivoire</option><option>🇸🇳 Sénégal</option><option>🇲🇱 Mali</option></select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Fuseau horaire</label>
+                    <select class="settings-input"><option selected>Africa/Niamey (UTC+1)</option><option>UTC+0</option><option>Europe/Paris (UTC+2)</option></select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Format de date</label>
+                    <select class="settings-input"><option selected>JJ/MM/AAAA</option><option>MM/JJ/AAAA</option><option>AAAA-MM-JJ</option></select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Format de l'heure</label>
+                    <select class="settings-input"><option selected>24 heures (14:30)</option><option>12 heures (2:30 PM)</option></select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Devise</label>
+                    <select class="settings-input"><option selected>XOF — Franc CFA (FCFA)</option><option>EUR — Euro (€)</option><option>USD — Dollar ($)</option></select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Séparateur décimal</label>
+                    <select class="settings-input"><option selected>Virgule (1 234,56)</option><option>Point (1,234.56)</option></select>
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                    <button class="settings-save-btn">Enregistrer les paramètres régionaux</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-card">
+        <div class="settings-card-header"><i class="bi bi-printer-fill"></i> Format d'impression</div>
+        <div class="settings-card-body">
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label class="settings-label">Format de papier</label>
+                    <select class="settings-input"><option selected>A4 (210 × 297 mm)</option><option>Lettre US (216 × 279 mm)</option><option>A5</option></select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="settings-label">Orientation par défaut</label>
+                    <select class="settings-input"><option selected>Portrait</option><option>Paysage</option></select>
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                    <button class="settings-save-btn">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="settings-toast" id="settingsToast"></div>
+
+
+@code {
+
+}

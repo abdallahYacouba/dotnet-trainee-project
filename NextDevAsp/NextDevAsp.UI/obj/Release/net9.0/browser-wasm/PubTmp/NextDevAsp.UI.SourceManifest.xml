@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Cours\NextDevAsp\NextDevAsp.UI\obj\Release\net9.0\browser-wasm\PubTmp\Out\" />
+</sitemanifest>

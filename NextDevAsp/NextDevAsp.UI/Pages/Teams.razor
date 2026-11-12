@@ -1,0 +1,84 @@
+﻿@page "/"
+@using NextDevAsp.UI.Models
+@using NextDevAsp.UI.Pages.Component
+@using System.Net.Http.Json
+@inject HttpClient Http
+
+<div class="container-fluid g-0 main-container">
+    <div class="row g-0 h-100">
+
+        <div class="col-md-4 col-lg-3 sidebar" id="sidebar">
+            
+            <SideBarHeader></SideBarHeader>
+
+            @if(teamMembers is null)
+            {
+                 <div class="loaderderTeam mt-5"></div>
+            }
+            else
+            {
+                <div class="chat-list">
+                    @foreach (var member in teamMembers)
+                    {
+                        <div class="chat-item" @onclick="() => ShowDetails(member)">
+                            <div class="chat-avatar me-2">
+                                <span>@member.Initial</span>
+                            </div>
+                            <div class="chat-info">
+                                <div class="chat-top">
+                                    <span class="chat-name">@($"{member.FirstName} {member.LastName}")</span>
+                                </div>
+                                <div class="chat-preview">
+                                    <span>@member.GroupName</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }  
+        </div>
+
+        <div class="col-md-8 col-lg-9 chat-area" id="chatArea">
+
+            <div class="header border-start border-secondary border-opacity-10">
+                <div class="d-flex align-items-center cursor-pointer"></div>
+                <div class="nav-icons">
+                    <i class="bi bi-person-plus" title="plus"></i>
+                </div>
+            </div>
+            @if (SelectedItem is not null){
+                <TeamDetail TeamMember="@SelectedItem"></TeamDetail>
+            } else {
+                <div class="mt-5">
+                    <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100 text-decoration-none text-secondary">
+                        <i class="bi bi-people-fill fs-1 mb-3"></i>
+						<h4>Select a team member to view details</h4>
+                     </a>
+                </div>
+            }
+
+        </div>
+
+    </div>
+</div> 
+
+
+@code {
+    public TeamMember? SelectedItem { get; set; }
+    private TeamMember[]? teamMembers;   
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            teamMembers =
+            await Http.GetFromJsonAsync<TeamMember[]>("/");
+        }catch (Exception ex){
+            Console.WriteLine($"Error fetching team members: {ex.Message}");
+        }
+    }
+    private void ShowDetails(TeamMember? selectedItem)
+    {
+        SelectedItem = selectedItem;
+        
+    }
+}

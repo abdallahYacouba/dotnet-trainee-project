@@ -1,0 +1,14 @@
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\bin\Debug\net9.0\Csharp13Net14.exe
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\bin\Debug\net9.0\Csharp13Net14.deps.json
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\bin\Debug\net9.0\Csharp13Net14.runtimeconfig.json
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\bin\Debug\net9.0\Csharp13Net14.dll
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\bin\Debug\net9.0\Csharp13Net14.pdb
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\obj\Debug\net9.0\Csharp13Net14.GeneratedMSBuildEditorConfig.editorconfig
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\obj\Debug\net9.0\Csharp13Net14.AssemblyInfoInputs.cache
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\obj\Debug\net9.0\Csharp13Net14.AssemblyInfo.cs
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\obj\Debug\net9.0\Csharp13Net14.csproj.CoreCompileInputs.cache
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\obj\Debug\net9.0\Csharp13Net14.dll
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\obj\Debug\net9.0\refint\Csharp13Net14.dll
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\obj\Debug\net9.0\Csharp13Net14.pdb
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\obj\Debug\net9.0\Csharp13Net14.genruntimeconfig.cache
+C:\Cours\console-workspace\Csharp13Net14\Csharp13Net14\obj\Debug\net9.0\ref\Csharp13Net14.dll

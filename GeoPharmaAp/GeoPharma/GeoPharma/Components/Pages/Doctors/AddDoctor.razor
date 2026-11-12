@@ -1,0 +1,156 @@
+﻿@page "/add-doctor"
+
+
+<div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
+    <h1 class="page-title">Nouveau Médecin</h1>
+</div>
+
+<form id="doctorForm" novalidate>
+    <div class="row g-4">
+
+        <!-- ── LEFT COLUMN ── -->
+        <div class="col-12 col-lg-8">
+
+            <!-- Informations générales -->
+            <div class="detail-card mb-4">
+                <div class="detail-card-header"><i class="bi bi-person-badge-fill"></i> Informations générales</div>
+                <div class="detail-card-body" style="padding:20px 18px;">
+                    <div class="row g-3">
+
+                        <div class="col-12">
+                            <label class="form-label-custom" for="docName">Nom complet <span class="req">*</span></label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-person input-icon"></i>
+                                <input type="text" id="docName" class="form-input" placeholder="Ex : Dr. Moussa Ibrahim" required />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="form-label-custom" for="docRole">Rôle <span class="req">*</span></label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-award input-icon"></i>
+                                <select id="docRole" class="form-input" required>
+                                    <option value="">— Sélectionner —</option>
+                                    <option>Médecin Chef</option>
+                                    <option>Médecin Spécialiste</option>
+                                    <option>Médecin Généraliste</option>
+                                    <option>Interne</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="form-label-custom" for="docDept">Département <span class="req">*</span></label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-hospital input-icon"></i>
+                                <select id="docDept" class="form-input" required>
+                                    <option value="">— Sélectionner —</option>
+                                    <option>Médecine Générale</option>
+                                    <option>Pédiatrie</option>
+                                    <option>Chirurgie</option>
+                                    <option>Cardiologie</option>
+                                    <option>Gynécologie</option>
+                                    <option>Urgences</option>
+                                    <option>Dermatologie</option>
+                                    <option>Ophtalmologie</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label-custom" for="docLocation">Localisation</label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-geo-alt input-icon"></i>
+                                <input type="text" id="docLocation" class="form-input" placeholder="Ex : Niamey, Niger" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contacts -->
+            <div class="detail-card mb-4">
+                <div class="detail-card-header"><i class="bi bi-telephone-fill"></i> Contacts</div>
+                <div class="detail-card-body" style="padding:20px 18px;">
+                    <div class="row g-3">
+
+                        <div class="col-sm-6">
+                            <label class="form-label-custom" for="docPhone1">Téléphone principal <span class="req">*</span></label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-telephone input-icon"></i>
+                                <input type="tel" id="docPhone1" class="form-input" placeholder="+227 XX XX XX XX" required />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="form-label-custom" for="docPhone2">Téléphone secondaire</label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-telephone input-icon"></i>
+                                <input type="tel" id="docPhone2" class="form-input" placeholder="+227 XX XX XX XX" />
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label-custom" for="docEmail">Adresse email</label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-envelope input-icon"></i>
+                                <input type="email" id="docEmail" class="form-input" placeholder="medecin@pharmanet.ne" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /left col -->
+        <!-- ── RIGHT COLUMN ── -->
+        <div class="col-12 col-lg-4">
+
+            <!-- Photo -->
+            <div class="detail-card mb-4">
+                <div class="detail-card-header"><i class="bi bi-image"></i> Photo</div>
+                <div class="detail-card-body" style="padding:20px 18px;">
+                    <div class="photo-upload-zone" id="photoZone" onclick="document.getElementById('docImage').click()">
+                        <div class="photo-preview" id="photoPreview">
+                            <i class="bi bi-person-circle" style="font-size:56px;color:var(--border-input);"></i>
+                        </div>
+                        <p class="photo-hint">Cliquer pour choisir une photo</p>
+                        <p class="photo-hint" style="font-size:var(--fs-2xs);">JPG, PNG — max 2 Mo</p>
+                    </div>
+                    <input type="file" id="docImage" accept="image/*" style="display:none;" onchange="previewPhoto(this)" />
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="detail-card">
+                <div class="detail-card-header"><i class="bi bi-send-fill"></i> Actions</div>
+                <div class="detail-card-body" style="padding:16px 18px;">
+                    <div class="d-flex flex-column gap-2">
+                        <button type="submit" class="btn-submit-doc" form="doctorForm">
+                            <i class="bi bi-check-circle-fill"></i> Enregistrer le médecin
+                        </button>
+                        <button type="reset" class="btn-reset-doc">
+                            <i class="bi bi-arrow-counterclockwise"></i> Réinitialiser
+                        </button>
+                        <a href="#" class="btn-cancel-doc">
+                            <i class="bi bi-x-circle"></i> Annuler
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /right col -->
+
+    </div>
+</form>
+
+<!-- Toast -->
+<div class="toast-success" id="docToast">
+    <i class="bi bi-check-circle-fill"></i> Médecin enregistré avec succès !
+</div>
+
+
+@code {
+
+}

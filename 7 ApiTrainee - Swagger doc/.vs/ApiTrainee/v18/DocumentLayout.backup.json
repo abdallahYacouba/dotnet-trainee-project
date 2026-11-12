@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\NET\\Cours\\7 ApiTrainee - Swagger doc\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|c:\\net\\cours\\7 apitrainee - swagger doc\\apitrainee\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|solutionrelative:apitrainee\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|c:\\net\\cours\\7 apitrainee - swagger doc\\apitrainee\\endpointshandler\\traineehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|solutionrelative:apitrainee\\endpointshandler\\traineehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|c:\\net\\cours\\7 apitrainee - swagger doc\\apitrainee\\endpointsfilter\\lockedidfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|solutionrelative:apitrainee\\endpointsfilter\\lockedidfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TraineeHandler.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\7 ApiTrainee - Swagger doc\\ApiTrainee\\EndPointsHandler\\TraineeHandler.cs",
+              "RelativeDocumentMoniker": "ApiTrainee\\EndPointsHandler\\TraineeHandler.cs",
+              "ToolTip": "C:\\NET\\Cours\\7 ApiTrainee - Swagger doc\\ApiTrainee\\EndPointsHandler\\TraineeHandler.cs",
+              "RelativeToolTip": "ApiTrainee\\EndPointsHandler\\TraineeHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T11:15:46.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LockedIdFilter.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\7 ApiTrainee - Swagger doc\\ApiTrainee\\EndPointsFilter\\LockedIdFilter.cs",
+              "RelativeDocumentMoniker": "ApiTrainee\\EndPointsFilter\\LockedIdFilter.cs",
+              "ToolTip": "C:\\NET\\Cours\\7 ApiTrainee - Swagger doc\\ApiTrainee\\EndPointsFilter\\LockedIdFilter.cs",
+              "RelativeToolTip": "ApiTrainee\\EndPointsFilter\\LockedIdFilter.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAiwAwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T11:15:46.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\7 ApiTrainee - Swagger doc\\ApiTrainee\\Program.cs",
+              "RelativeDocumentMoniker": "ApiTrainee\\Program.cs",
+              "ToolTip": "C:\\NET\\Cours\\7 ApiTrainee - Swagger doc\\ApiTrainee\\Program.cs",
+              "RelativeToolTip": "ApiTrainee\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAiwBcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T11:15:46.889Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

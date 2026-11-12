@@ -1,0 +1,28 @@
+﻿@page "/"
+@inject HttpClient Http
+
+<PageTitle>Home</PageTitle>
+
+<p class="alert alert-danger">
+    @Message
+</p>
+
+<button class="btn btn-primary" @onclick="HandleRegistration">Register</button>
+
+@code{
+    public string? Message { get; set; } = "Default value";
+
+    private async Task HandleRegistration()
+    {
+        var userData = new { Email = "abdallyacali@yahou.com", Password = "AZERTYhgjhjh£µµç_ç778" };
+        using var result = await Http.PostAsJsonAsync("register", userData);
+        if (result.IsSuccessStatusCode)
+        {
+            Message = "Handle success (e.g., show success message, redirect to login";
+        }
+        else
+        {
+            Message = "Handle error (e.g., display validation errors";
+        }
+    }
+}

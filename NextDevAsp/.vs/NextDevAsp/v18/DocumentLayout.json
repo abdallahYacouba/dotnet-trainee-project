@@ -1,0 +1,44 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\NET\\Cours\\NextDevAsp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{40F701B3-E0EC-4FB0-B2AF-BCFDFF72E44C}|NextDevWPF.UI\\NextDevWPF.UI.csproj|c:\\net\\cours\\nextdevasp\\nextdevwpf.ui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{40F701B3-E0EC-4FB0-B2AF-BCFDFF72E44C}|NextDevWPF.UI\\NextDevWPF.UI.csproj|solutionrelative:nextdevwpf.ui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\NET\\Cours\\NextDevAsp\\NextDevWPF.UI\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "NextDevWPF.UI\\MainWindow.xaml",
+              "ToolTip": "C:\\NET\\Cours\\NextDevAsp\\NextDevWPF.UI\\MainWindow.xaml",
+              "RelativeToolTip": "NextDevWPF.UI\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-03T15:31:06.358Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

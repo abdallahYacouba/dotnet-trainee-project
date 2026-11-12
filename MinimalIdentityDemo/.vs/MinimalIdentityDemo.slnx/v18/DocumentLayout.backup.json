@@ -1,0 +1,93 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\NET\\Cours\\MinimalIdentityDemo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5E579B36-7131-87B9-F486-EA00BB8BDDC5}|MinimalIdentityDemo.csproj|c:\\net\\cours\\minimalidentitydemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E579B36-7131-87B9-F486-EA00BB8BDDC5}|MinimalIdentityDemo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E579B36-7131-87B9-F486-EA00BB8BDDC5}|MinimalIdentityDemo.csproj|c:\\net\\cours\\minimalidentitydemo\\models\\jwtconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E579B36-7131-87B9-F486-EA00BB8BDDC5}|MinimalIdentityDemo.csproj|solutionrelative:models\\jwtconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E579B36-7131-87B9-F486-EA00BB8BDDC5}|MinimalIdentityDemo.csproj|c:\\net\\cours\\minimalidentitydemo\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E579B36-7131-87B9-F486-EA00BB8BDDC5}|MinimalIdentityDemo.csproj|solutionrelative:models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E579B36-7131-87B9-F486-EA00BB8BDDC5}|MinimalIdentityDemo.csproj|c:\\net\\cours\\minimalidentitydemo\\models\\registrationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E579B36-7131-87B9-F486-EA00BB8BDDC5}|MinimalIdentityDemo.csproj|solutionrelative:models\\registrationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JWTConfiguration.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\MinimalIdentityDemo\\Models\\JWTConfiguration.cs",
+              "RelativeDocumentMoniker": "Models\\JWTConfiguration.cs",
+              "ToolTip": "C:\\NET\\Cours\\MinimalIdentityDemo\\Models\\JWTConfiguration.cs",
+              "RelativeToolTip": "Models\\JWTConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-30T12:49:43.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\MinimalIdentityDemo\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\NET\\Cours\\MinimalIdentityDemo\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAGMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-30T10:14:10.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\MinimalIdentityDemo\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "Models\\LoginRequest.cs",
+              "ToolTip": "C:\\NET\\Cours\\MinimalIdentityDemo\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-30T11:56:54.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegistrationDto.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\MinimalIdentityDemo\\Models\\RegistrationDto.cs",
+              "RelativeDocumentMoniker": "Models\\RegistrationDto.cs",
+              "ToolTip": "C:\\NET\\Cours\\MinimalIdentityDemo\\Models\\RegistrationDto.cs",
+              "RelativeToolTip": "Models\\RegistrationDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-30T11:26:48.654Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

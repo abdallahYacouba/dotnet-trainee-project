@@ -1,0 +1,94 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\NET\\Cours\\8 ApiTrainee - JWT Security\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|c:\\net\\cours\\8 apitrainee - jwt security\\apitrainee\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|solutionrelative:apitrainee\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|c:\\net\\cours\\8 apitrainee - jwt security\\apitrainee\\apitrainee.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|solutionrelative:apitrainee\\apitrainee.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|c:\\net\\cours\\8 apitrainee - jwt security\\apitrainee\\endpointshandler\\traineehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|solutionrelative:apitrainee\\endpointshandler\\traineehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|c:\\net\\cours\\8 apitrainee - jwt security\\apitrainee\\endpointsfilter\\lockedidfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB1C1061-ADC8-4C82-BD65-1B17CD0471E5}|ApiTrainee\\ApiTrainee.csproj|solutionrelative:apitrainee\\endpointsfilter\\lockedidfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApiTrainee",
+              "DocumentMoniker": "C:\\NET\\Cours\\8 ApiTrainee - JWT Security\\ApiTrainee\\ApiTrainee.csproj",
+              "RelativeDocumentMoniker": "ApiTrainee\\ApiTrainee.csproj",
+              "ToolTip": "C:\\NET\\Cours\\8 ApiTrainee - JWT Security\\ApiTrainee\\ApiTrainee.csproj",
+              "RelativeToolTip": "ApiTrainee\\ApiTrainee.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-18T12:01:59.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\8 ApiTrainee - JWT Security\\ApiTrainee\\Program.cs",
+              "RelativeDocumentMoniker": "ApiTrainee\\Program.cs",
+              "ToolTip": "C:\\NET\\Cours\\8 ApiTrainee - JWT Security\\ApiTrainee\\Program.cs",
+              "RelativeToolTip": "ApiTrainee\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAFoAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T14:52:33.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TraineeHandler.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\8 ApiTrainee - JWT Security\\ApiTrainee\\EndPointsHandler\\TraineeHandler.cs",
+              "RelativeDocumentMoniker": "ApiTrainee\\EndPointsHandler\\TraineeHandler.cs",
+              "ToolTip": "C:\\NET\\Cours\\8 ApiTrainee - JWT Security\\ApiTrainee\\EndPointsHandler\\TraineeHandler.cs",
+              "RelativeToolTip": "ApiTrainee\\EndPointsHandler\\TraineeHandler.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T14:52:14.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LockedIdFilter.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\8 ApiTrainee - JWT Security\\ApiTrainee\\EndPointsFilter\\LockedIdFilter.cs",
+              "RelativeDocumentMoniker": "ApiTrainee\\EndPointsFilter\\LockedIdFilter.cs",
+              "ToolTip": "C:\\NET\\Cours\\8 ApiTrainee - JWT Security\\ApiTrainee\\EndPointsFilter\\LockedIdFilter.cs",
+              "RelativeToolTip": "ApiTrainee\\EndPointsFilter\\LockedIdFilter.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T09:18:40.413Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

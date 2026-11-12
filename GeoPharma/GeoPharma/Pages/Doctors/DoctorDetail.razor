@@ -1,0 +1,164 @@
+﻿@page "/doctor-detail"
+
+
+<!-- Back button -->
+<div class="mb-4">
+    <a href="#" class="back-link"><i class="bi bi-arrow-left"></i> Retour à la liste</a>
+</div>
+
+<!-- Profile Header -->
+<div class="profile-header mb-4">
+    <div class="profile-banner"></div>
+    <div class="profile-header-body">
+        <div class="profile-avatar-wrap">
+            <div class="profile-avatar">MI</div>
+        </div>
+        <div class="profile-meta">
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+                <h1 class="profile-name">Dr. Moussa Ibrahim</h1>
+                <span class="profile-role-badge">Médecin Chef</span>
+            </div>
+            <div class="d-flex align-items-center gap-4 mt-2 flex-wrap">
+                <span class="profile-sub"><i class="bi bi-hospital"></i> Médecine Générale</span>
+                <span class="profile-sub"><i class="bi bi-geo-alt"></i> Niamey, Niger</span>
+            </div>
+        </div>
+        <div class="profile-actions ms-auto d-flex gap-2">
+            <button class="profile-btn-edit"><i class="bi bi-pencil"></i> Modifier</button>
+            <button class="profile-btn-del"><i class="bi bi-trash3"></i></button>
+        </div>
+    </div>
+</div>
+
+<!-- Detail Cards -->
+<div class="row g-4">
+
+    <!-- Left column -->
+    <div class="col-12 col-lg-8">
+
+        <!-- Informations générales -->
+        <div class="detail-card mb-4">
+            <div class="detail-card-header"><i class="bi bi-person-badge-fill"></i> Informations générales</div>
+            <div class="detail-card-body">
+                <div class="row g-0">
+
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-person"></i> Nom complet</div>
+                            <div class="detail-value">Dr. Moussa Ibrahim</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-award"></i> Rôle</div>
+                            <div class="detail-value"><span class="inline-badge chief">Médecin Chef</span></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-hospital"></i> Département</div>
+                            <div class="detail-value">Médecine Générale</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-geo-alt"></i> Localisation</div>
+                            <div class="detail-value">Niamey, Niger</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacts -->
+        <div class="detail-card mb-4">
+            <div class="detail-card-header"><i class="bi bi-telephone-fill"></i> Contacts</div>
+            <div class="detail-card-body">
+                <div class="row g-0">
+
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-telephone"></i> Téléphone principal</div>
+                            <div class="detail-value">
+                                <a href="tel:+22720734512" class="contact-link phone">+227 20 73 45 12</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-telephone"></i> Téléphone secondaire</div>
+                            <div class="detail-value">
+                                <a href="tel:+22720734599" class="contact-link phone">+227 20 73 45 99</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="detail-field" style="border-bottom:none;">
+                            <div class="detail-label"><i class="bi bi-envelope"></i> Adresse email</div>
+                            <div class="detail-value">
+                                <a href="mailto:m.ibrahim@pharmanet.ne" class="contact-link email">m.ibrahim@pharmanet.ne</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /left col -->
+    <!-- Right column -->
+    <div class="col-12 col-lg-4">
+
+        <!-- Photo -->
+        <div class="detail-card mb-4">
+            <div class="detail-card-header"><i class="bi bi-image"></i> Photo</div>
+            <div class="detail-card-body d-flex flex-column align-items-center gap-3 py-4">
+                <div class="profile-avatar-lg">MI</div>
+                <button class="profile-btn-edit w-100 justify-content-center" style="max-width:200px;">
+                    <i class="bi bi-upload"></i> Changer la photo
+                </button>
+            </div>
+        </div>
+
+        <!-- Pharmacies associées -->
+        <div class="detail-card">
+            <div class="detail-card-header"><i class="bi bi-hospital-fill"></i> Pharmacies associées</div>
+            <div class="detail-card-body p-0">
+                <div class="assoc-item">
+                    <div class="assoc-dot"></div>
+                    <div>
+                        <div class="assoc-name">Pharmacie Centrale</div>
+                        <div class="assoc-sub">District Niamey I</div>
+                    </div>
+                </div>
+                <div class="assoc-item">
+                    <div class="assoc-dot"></div>
+                    <div>
+                        <div class="assoc-name">Pharmacie du Sahel</div>
+                        <div class="assoc-sub">District Niamey III</div>
+                    </div>
+                </div>
+                <div class="assoc-item" style="border-bottom:none;">
+                    <div class="assoc-dot"></div>
+                    <div>
+                        <div class="assoc-name">Pharmacie Plateau</div>
+                        <div class="assoc-sub">District Niamey II</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /right col -->
+
+</div><!-- /row -->
+
+
+@code {
+
+}

@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\NET\\Cours\\BogusFaker\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D72B419A-E358-41B2-8528-B90DBBC453E2}|BogusFaker\\BogusFaker.csproj|c:\\net\\cours\\bogusfaker\\bogusfaker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D72B419A-E358-41B2-8528-B90DBBC453E2}|BogusFaker\\BogusFaker.csproj|solutionrelative:bogusfaker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D72B419A-E358-41B2-8528-B90DBBC453E2}|BogusFaker\\BogusFaker.csproj|c:\\net\\cours\\bogusfaker\\bogusfaker\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D72B419A-E358-41B2-8528-B90DBBC453E2}|BogusFaker\\BogusFaker.csproj|solutionrelative:bogusfaker\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\BogusFaker\\BogusFaker\\Customer.cs",
+              "RelativeDocumentMoniker": "BogusFaker\\Customer.cs",
+              "ToolTip": "C:\\NET\\Cours\\BogusFaker\\BogusFaker\\Customer.cs",
+              "RelativeToolTip": "BogusFaker\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T13:24:00.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\BogusFaker\\BogusFaker\\Program.cs",
+              "RelativeDocumentMoniker": "BogusFaker\\Program.cs",
+              "ToolTip": "C:\\NET\\Cours\\BogusFaker\\BogusFaker\\Program.cs",
+              "RelativeToolTip": "BogusFaker\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T13:02:34.047Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

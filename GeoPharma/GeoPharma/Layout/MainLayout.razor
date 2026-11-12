@@ -1,0 +1,185 @@
+﻿@inherits LayoutComponentBase
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<!-- ══════════ SIDEBAR ══════════ -->
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+        <div class="brand-logo"><i class="bi bi-capsule text-white" style="font-size:var(--fs-lg);"></i></div>
+        <span class="brand-name">GeoPharma</span>
+        <button class="brand-close" onclick="toggleSidebar()"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <div class="sidebar-nav">
+
+        <a class="sidebar-item" href="/home"><i class="bi bi-border-all"></i> Tableau de bord</a>
+
+        <!-- Pharmacie -->
+        <button class="acc-trigger" onclick="toggleAcc('acc-projects')">
+            <i class="bi bi-hospital bi-main"></i> Pharmacies
+            <i class="bi bi-chevron-right acc-chevron"></i>
+        </button>
+        <div class="acc-body" id="acc-projects">
+            <div class="acc-sub-label">Actions</div>
+            <a class="acc-sub-item" href="/add-pharmacy"><i class="bi bi-plus-circle"></i> Créer pharmacie</a>
+            <a class="acc-sub-item" href="/pharmacy"><i class="bi bi-grid"></i> Voir tout le catalogue</a>
+        </div>
+
+        <button class="acc-trigger" onclick="toggleAcc('acc-work')">
+            <i class="bi bi-people bi-main"></i> Médecins
+            <i class="bi bi-chevron-right acc-chevron"></i>
+        </button>
+        <div class="acc-body" id="acc-work">
+            <a class="acc-sub-item" href="/add-doctor"><i class="bi bi-check-circle"></i> Ajouter médecins</a>
+            <a class="acc-sub-item" href="/doctor"><i class="bi bi-grid"></i> Voir tout le catalogue</a>
+        </div>
+
+        <a class="sidebar-item" href="/planning"><i class="bi bi-calendar3"></i> Planing</a>
+
+        <div class="sidebar-divider"></div>
+        <!-- Settings -->
+        <a class="sidebar-item" href="/setting"><i class="bi bi-gear"></i> Settings</a>
+
+
+        <!-- Médicaments -->
+        <button class="acc-trigger" onclick="toggleAcc('acc-projects')">
+            <i class="bi bi-capsule bi-main"></i> Médicaments
+            <i class="bi bi-chevron-right acc-chevron"></i>
+        </button>
+        <div class="acc-body" id="acc-projects">
+            <div class="acc-sub-label">Catégories</div>
+            <a class="acc-sub-item active" href="#"><i class="bi bi-heart-pulse"></i> Cardiovasculaire <span class="sub-badge">142</span></a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-lungs"></i> Respiratoire <span class="sub-badge green">89</span></a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-virus"></i> Antibiotiques <span class="sub-badge purple">204</span></a>
+            <div class="acc-sub-label">Actions</div>
+            <a class="acc-sub-item" href="#"><i class="bi bi-plus-circle"></i> Ajouter médicament</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-grid"></i> Voir tout le catalogue</a>
+        </div>
+
+        <!-- Commandes-->
+        <button class="acc-trigger" onclick="toggleAcc('acc-work')">
+            <i class="bi bi-cart3 bi-main"></i> Commandes
+            <i class="bi bi-chevron-right acc-chevron"></i>
+        </button>
+        <div class="acc-body" id="acc-work">
+            <a class="acc-sub-item" href="#"><i class="bi bi-hourglass-split"></i> En attente <span class="sub-badge">12</span></a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-truck"></i> En livraison <span class="sub-badge">5</span></a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-check-circle"></i> Livrées</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-x-circle"></i> Annulées</a>
+        </div>
+        <!-- Stock -->
+        <button class="acc-trigger" onclick="toggleAcc('acc-boards')">
+            <i class="bi bi-box-seam bi-main"></i> Gestion du Stock
+            <i class="bi bi-chevron-right acc-chevron"></i>
+        </button>
+        <div class="acc-body" id="acc-boards">
+            <a class="acc-sub-item" href="#"><i class="bi bi-bar-chart-line"></i> Niveau de stock</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-exclamation-triangle"></i> Stock critique</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-calendar-x"></i> Expirations proches</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-arrow-repeat"></i> Réapprovisionnement</a>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <a class="sidebar-item" href="#"><i class="bi bi-star"></i> Favoris <i class="bi bi-chevron-right s-auto" style="font-size:var(--fs-2xs);color:var(--text-soft);"></i></a>
+
+        <!-- Fournisseurs -->
+        <button class="acc-trigger" onclick="toggleAcc('acc-apps')">
+            <i class="bi bi-building bi-main"></i> Fournisseurs
+            <i class="bi bi-chevron-right acc-chevron"></i>
+        </button>
+        <div class="acc-body" id="acc-apps">
+            <a class="acc-sub-item active" href="#"><i class="bi bi-compass"></i> Explorer le catalogue</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-building-check"></i> Fournisseurs agréés <span class="sub-badge">8</span></a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-bookmark-star"></i> Produits vedettes</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-award"></i> Mieux notés</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-lightning-charge"></i> Nouvelles arrivées</a>
+        </div>
+
+        <!-- Rapports -->
+        <button class="acc-trigger" onclick="toggleAcc('acc-plans')">
+            <i class="bi bi-clipboard2-pulse bi-main"></i> Rapports &amp; Analyses
+            <i class="bi bi-chevron-right acc-chevron"></i>
+        </button>
+        <div class="acc-body" id="acc-plans">
+            <a class="acc-sub-item" href="#"><i class="bi bi-people"></i> Ventes par région</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-calendar3"></i> Rapport mensuel</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-graph-up"></i> Tendances de consommation</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-clipboard2-data"></i> Statistiques DCI</a>
+        </div>
+
+        <!-- Pharmacies -->
+        <button class="acc-trigger" onclick="toggleAcc('acc-spaces')">
+            <i class="bi bi-hospital bi-main"></i> Mes Pharmacies
+            <i class="bi bi-chevron-right acc-chevron"></i>
+        </button>
+        <div class="acc-body" id="acc-spaces">
+            <a class="acc-sub-item" href="#"><i class="bi bi-shop"></i> Pharmacie Centrale Niamey</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-shop"></i> Pharmacie Maradi</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-shop"></i> Pharmacie Zinder</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-plus-circle"></i> Ajouter une pharmacie</a>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-label">Recommandé</div>
+        <a class="sidebar-item" href="#"><i class="bi bi-bell"></i> Alertes de stock <span class="try-badge s-auto">3</span></a>
+        <a class="sidebar-item" href="#"><i class="bi bi-people"></i> Équipe <i class="bi bi-box-arrow-up-right s-auto" style="font-size:var(--fs-xs);color:var(--text-soft);"></i></a>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Settings -->
+        <button class="acc-trigger" onclick="toggleAcc('acc-settings')">
+            <i class="bi bi-gear bi-main"></i> Settings
+            <i class="bi bi-chevron-right acc-chevron"></i>
+        </button>
+        <div class="acc-body" id="acc-settings">
+            <a class="acc-sub-item" href="#"><i class="bi bi-sliders"></i> Paramètres pharmacie</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-shield-lock"></i> Autorisations</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-bell"></i> Notifications</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-person-badge"></i> Mon compte</a>
+            <a class="acc-sub-item" href="#"><i class="bi bi-question-circle"></i> Aide &amp; support</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- ══════════ TOP NAV ══════════ -->
+<div class="topnav">
+    <button class="sidebar-toggle" onclick="toggleSidebar()">
+        <i class="bi bi-layout-sidebar-inset" style="font-size:var(--fs-lg);"></i>
+    </button>
+
+    <div class="topnav-search">
+        <i class="bi bi-search si"></i>
+        <input type="text" placeholder="Rechercher médicaments, produits…" />
+    </div>
+
+    <div class="topnav-actions">
+        <button class="btn-premium"><i class="bi bi-gem" style="color:var(--purple-border);"></i> Abonnement Pro</button>
+        <button class="btn-rovo"><div class="rovo-dot"></div> Assistant IA</button>
+        <div class="icon-btn hide-xs"><i class="bi bi-bell" style="font-size:var(--fs-lg);"></i></div>
+        <div class="icon-btn">
+            <i class="bi bi-clock-history" style="font-size:var(--fs-lg);"></i>
+            <span class="badge-count">3+</span>
+        </div>
+        <div class="icon-btn hide-xs"><i class="bi bi-gear" style="font-size:var(--fs-lg);"></i></div>
+        <div class="avatar">A</div>
+    </div>
+</div>
+
+<!-- ══════════ MAIN CONTENT ══════════ -->
+<div class="main-content">
+
+    @Body
+
+</div>
+
+
+
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>

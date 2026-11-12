@@ -1,0 +1,79 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\NET\\Cours\\MinimalApiDapper\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0A2BAC-81E7-D370-55F2-DE592F526CE0}|MinimalApiDapper\\MinimalApiDapper.csproj|c:\\net\\cours\\minimalapidapper\\minimalapidapper\\dapperservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0A2BAC-81E7-D370-55F2-DE592F526CE0}|MinimalApiDapper\\MinimalApiDapper.csproj|solutionrelative:minimalapidapper\\dapperservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0A2BAC-81E7-D370-55F2-DE592F526CE0}|MinimalApiDapper\\MinimalApiDapper.csproj|c:\\net\\cours\\minimalapidapper\\minimalapidapper\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0A2BAC-81E7-D370-55F2-DE592F526CE0}|MinimalApiDapper\\MinimalApiDapper.csproj|solutionrelative:minimalapidapper\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0A2BAC-81E7-D370-55F2-DE592F526CE0}|MinimalApiDapper\\MinimalApiDapper.csproj|c:\\net\\cours\\minimalapidapper\\minimalapidapper\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0A2BAC-81E7-D370-55F2-DE592F526CE0}|MinimalApiDapper\\MinimalApiDapper.csproj|solutionrelative:minimalapidapper\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\MinimalApiDapper\\MinimalApiDapper\\Employee.cs",
+              "RelativeDocumentMoniker": "MinimalApiDapper\\Employee.cs",
+              "ToolTip": "C:\\NET\\Cours\\MinimalApiDapper\\MinimalApiDapper\\Employee.cs",
+              "RelativeToolTip": "MinimalApiDapper\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T11:40:38.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DapperService.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\MinimalApiDapper\\MinimalApiDapper\\DapperService.cs",
+              "RelativeDocumentMoniker": "MinimalApiDapper\\DapperService.cs",
+              "ToolTip": "C:\\NET\\Cours\\MinimalApiDapper\\MinimalApiDapper\\DapperService.cs",
+              "RelativeToolTip": "MinimalApiDapper\\DapperService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA4wAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T11:21:35.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\MinimalApiDapper\\MinimalApiDapper\\Program.cs",
+              "RelativeDocumentMoniker": "MinimalApiDapper\\Program.cs",
+              "ToolTip": "C:\\NET\\Cours\\MinimalApiDapper\\MinimalApiDapper\\Program.cs",
+              "RelativeToolTip": "MinimalApiDapper\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T11:19:20.913Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

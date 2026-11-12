@@ -1,0 +1,25 @@
+﻿@page "/"
+@using BlazorApp1.Models
+
+<PageTitle>Home</PageTitle>
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+@if(Students is not null)
+{
+    <EditForm>
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+        <button class="btn btn-success" type="submit">Validate</button>
+    </EditForm>
+}
+
+
+@code{
+    public Students? Students { get; set; }
+    protected override void OnInitialized()
+    {
+        Students = new();
+    }
+}

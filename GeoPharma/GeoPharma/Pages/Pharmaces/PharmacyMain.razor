@@ -1,0 +1,710 @@
+﻿@page "/pharmacy"
+@using GeoPharma.AppData
+@using GeoPharma.Components.Shared
+@using Microsoft.EntityFrameworkCore
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IDbContextFactory<AppDbContext> _contextFactory
+
+
+<h1 class="page-title">Catalogue des Pharmacies</h1>
+
+<!-- Search + View Toggle -->
+<div class="search-view-row">
+    <div class="app-search-wrap">
+        <i class="bi bi-search asi"></i>
+        <input type="text" class="app-search" placeholder="Rechercher par DCI, nom commercial, fournisseur…" />
+    </div>
+    <div class="view-toggle-group">
+        <button class="view-btn active" id="btnGrid" onclick="setView('grid')" title="Grid view">
+            <i class="bi bi-grid-3x3-gap-fill"></i><span class="view-btn-label">Grille</span>
+        </button>
+        <button class="view-btn" id="btnList" onclick="setView('list')" title="List view">
+            <i class="bi bi-list-ul"></i><span class="view-btn-label">Liste</span>
+        </button>
+    </div>
+</div>
+
+<!-- Filters -->
+<div class="d-flex flex-wrap gap-2 mb-4">
+    <button class="filter-btn"><i class="bi bi-geo-alt"></i> Tous</button>
+    <button class="filter-btn"><i class="bi bi-geo-alt"></i> Niamey</button>
+    <button class="filter-btn"><i class="bi bi-geo-alt"></i> Agadez</button>
+    <button class="filter-btn"><i class="bi bi-geo-alt"></i> Diffa</button>
+    <button class="filter-btn"><i class="bi bi-geo-alt"></i> Dosso</button>
+    <button class="filter-btn"><i class="bi bi-geo-alt"></i> Maradi</button>
+    <button class="filter-btn"><i class="bi bi-geo-alt"></i> Tahoua</button>
+    <button class="filter-btn"><i class="bi bi-geo-alt"></i> Tillabéri</button>
+    <button class="filter-btn"><i class="bi bi-geo-alt"></i> Zinder</button>
+</div>
+
+<!-- Sort bar -->
+<div class="sort-bar">
+    <span class="count-text">@Pharmacies!.Count pharmacies</span>
+</div>
+
+<!-- Cards -->
+<div class="row g-3" id="cardsContainer">
+    @if (Pharmacies is not null)
+    {
+        @foreach (var ph in Pharmacies)
+        {
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="ph-card">
+                    <div class="ph-card-top">
+                        <div class="ph-avatar" style="background:linear-gradient(135deg,#0a7c4e,#0fa366);">PC</div>
+                        <div class="ph-title">
+                            <div class="ph-name">Pharmacie @ph.Name</div>
+                            <div class="ph-district"><i class="bi bi-geo-alt"></i> @ph.Address!.District</div>
+                        </div>
+                        <span class="ph-status-badge @(ph.Status ? "active" : "inactive")">
+                            @if(ph.Status)
+                            {
+                                <span>Active</span>
+                            }
+                            else
+                            {
+                                <span>Inactive</span>
+                            }
+                        </span>
+                    </div>
+                    <div class="ph-card-body">
+                        <div class="ph-row"><i class="bi bi-telephone"></i> @ph.Address.PhoneNumber1</div>
+                        <div class="ph-row"><i class="bi bi-envelope"></i> @ph.Address.Email</div>
+                        <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le @ph.CreateAt</div>
+                        <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. @ph.Doctor!.FullName</div>
+                        <div class="ph-row"><i class="bi bi-pin-map"></i> @ph.Region!.Name, @ph.Municipality!.Name</div>
+                        <div class="ph-row"><i class="bi bi-globe"></i> @ph.Address.WebSiteUrl</div>
+                        <div class="ph-social">
+                            <SocialLink Url="@ph.Address.LinkedInUrl" Logo="bi bi-linkedin" LogoColor="linkedin" Label="LinkedIn"/>
+                            <SocialLink Url="@ph.Address.InstagramUrl" Logo="bi bi-instagram" LogoColor="instagram" Label="Instagram" />
+                            <SocialLink Url="@ph.Address.XUrl" Logo="bi bi-twitter-x" LogoColor="x" Label="X (Twitter)"/>
+                            <SocialLink Url="@ph.Address.FacebookUrl" Logo="bi bi-facebook" LogoColor="facebook" Label="Facebook"/>
+                            <SocialLink Url="@ph.Address.YoutubeUrl" Logo="bi bi-youtube" LogoColor="youtube" Label="YouTube" />
+                            @* <a href="@ph.Address.LinkedInUrl" class="ph-social-link linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="@ph.Address.InstagramUrl" class="ph-social-link instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="@ph.Address.XUrl" class="ph-social-link x" title="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+                            <a href="@ph.Address.FacebookUrl" class="ph-social-link facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="@ph.Address.YoutubeUrl" class="ph-social-link youtube" title="YouTube"><i class="bi bi-youtube"></i></a> *@
+                        </div>
+                    </div>
+                    <div class="ph-card-footer">
+                        <span class="ph-region-pill">Niamey</span>
+                        <div class="ph-act-group">
+                            <button class="ph-act" @onclick="NavToDetailHandler" title="Voir"><i class="bi bi-eye"></i></button>
+                            <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                            <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }     
+    }
+@*     <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#e67e22,#f39c12);">PM</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie du Marché</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Maradi Centre</div>
+                </div>
+                <span class="ph-status-badge active">Active</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 41 11 08</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> marche@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 02 juin 2015</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Fatoumata Diallo</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Avenue du Marché Grand, Maradi</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#fff3e0;color:#d35400;">Maradi</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);">PS</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie du Sahel</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Agadez</div>
+                </div>
+                <span class="ph-status-badge inactive">Inactive</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 44 00 37</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> sahel@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 19 jan 2012</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Abdou Mahamane</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Quartier Sabon Gari, Agadez</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#eae6ff;color:#6e5dc6;">Agadez</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#2980b9,#3498db);">PZ</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie Zinder Sud</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Zinder Ville</div>
+                </div>
+                <span class="ph-status-badge active">Active</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 51 22 90</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> zinder@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 07 avr 2018</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Halimatou Sidibe</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Route de Tanout, Zinder</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#e3f5ff;color:#2980b9;">Zinder</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);">PS</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie du Sahel</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Agadez</div>
+                </div>
+                <span class="ph-status-badge inactive">Inactive</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 44 00 37</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> sahel@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 19 jan 2012</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Abdou Mahamane</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Quartier Sabon Gari, Agadez</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#eae6ff;color:#6e5dc6;">Agadez</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#2980b9,#3498db);">PZ</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie Zinder Sud</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Zinder Ville</div>
+                </div>
+                <span class="ph-status-badge active">Active</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 51 22 90</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> zinder@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 07 avr 2018</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Halimatou Sidibe</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Route de Tanout, Zinder</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#e3f5ff;color:#2980b9;">Zinder</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);">PS</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie du Sahel</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Agadez</div>
+                </div>
+                <span class="ph-status-badge inactive">Inactive</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 44 00 37</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> sahel@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 19 jan 2012</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Abdou Mahamane</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Quartier Sabon Gari, Agadez</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#eae6ff;color:#6e5dc6;">Agadez</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#2980b9,#3498db);">PZ</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie Zinder Sud</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Zinder Ville</div>
+                </div>
+                <span class="ph-status-badge active">Active</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 51 22 90</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> zinder@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 07 avr 2018</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Halimatou Sidibe</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Route de Tanout, Zinder</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#e3f5ff;color:#2980b9;">Zinder</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);">PS</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie du Sahel</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Agadez</div>
+                </div>
+                <span class="ph-status-badge inactive">Inactive</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 44 00 37</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> sahel@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 19 jan 2012</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Abdou Mahamane</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Quartier Sabon Gari, Agadez</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#eae6ff;color:#6e5dc6;">Agadez</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#2980b9,#3498db);">PZ</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie Zinder Sud</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Zinder Ville</div>
+                </div>
+                <span class="ph-status-badge active">Active</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 51 22 90</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> zinder@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 07 avr 2018</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Halimatou Sidibe</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Route de Tanout, Zinder</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#e3f5ff;color:#2980b9;">Zinder</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);">PS</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie du Sahel</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Agadez</div>
+                </div>
+                <span class="ph-status-badge inactive">Inactive</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 44 00 37</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> sahel@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 19 jan 2012</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Abdou Mahamane</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Quartier Sabon Gari, Agadez</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#eae6ff;color:#6e5dc6;">Agadez</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#2980b9,#3498db);">PZ</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie Zinder Sud</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Zinder Ville</div>
+                </div>
+                <span class="ph-status-badge active">Active</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 51 22 90</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> zinder@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 07 avr 2018</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Halimatou Sidibe</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Route de Tanout, Zinder</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#e3f5ff;color:#2980b9;">Zinder</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);">PS</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie du Sahel</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Agadez</div>
+                </div>
+                <span class="ph-status-badge inactive">Inactive</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 44 00 37</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> sahel@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 19 jan 2012</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Abdou Mahamane</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Quartier Sabon Gari, Agadez</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#eae6ff;color:#6e5dc6;">Agadez</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#2980b9,#3498db);">PZ</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie Zinder Sud</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Zinder Ville</div>
+                </div>
+                <span class="ph-status-badge active">Active</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 51 22 90</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> zinder@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 07 avr 2018</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Halimatou Sidibe</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Route de Tanout, Zinder</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#e3f5ff;color:#2980b9;">Zinder</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);">PS</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie du Sahel</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Agadez</div>
+                </div>
+                <span class="ph-status-badge inactive">Inactive</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 44 00 37</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> sahel@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 19 jan 2012</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Abdou Mahamane</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Quartier Sabon Gari, Agadez</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#eae6ff;color:#6e5dc6;">Agadez</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#2980b9,#3498db);">PZ</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie Zinder Sud</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Zinder Ville</div>
+                </div>
+                <span class="ph-status-badge active">Active</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 51 22 90</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> zinder@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 07 avr 2018</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Halimatou Sidibe</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Route de Tanout, Zinder</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#e3f5ff;color:#2980b9;">Zinder</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);">PS</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie du Sahel</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Agadez</div>
+                </div>
+                <span class="ph-status-badge inactive">Inactive</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 44 00 37</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> sahel@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 19 jan 2012</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Abdou Mahamane</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Quartier Sabon Gari, Agadez</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#eae6ff;color:#6e5dc6;">Agadez</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#2980b9,#3498db);">PZ</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie Zinder Sud</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Zinder Ville</div>
+                </div>
+                <span class="ph-status-badge active">Active</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 51 22 90</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> zinder@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 07 avr 2018</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Halimatou Sidibe</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Route de Tanout, Zinder</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#e3f5ff;color:#2980b9;">Zinder</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#6e5dc6,#9c6ade);">PS</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie du Sahel</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Agadez</div>
+                </div>
+                <span class="ph-status-badge inactive">Inactive</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 44 00 37</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> sahel@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 19 jan 2012</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Abdou Mahamane</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Quartier Sabon Gari, Agadez</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#eae6ff;color:#6e5dc6;">Agadez</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#2980b9,#3498db);">PZ</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie Zinder Sud</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Zinder Ville</div>
+                </div>
+                <span class="ph-status-badge active">Active</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 51 22 90</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> zinder@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 07 avr 2018</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Halimatou Sidibe</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Route de Tanout, Zinder</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#e3f5ff;color:#2980b9;">Zinder</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#c0392b,#e74c3c);">PD</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie Dosso Est</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Dosso</div>
+                </div>
+                <span class="ph-status-badge active">Active</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 65 33 14</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> dosso@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 22 sep 2016</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Issoufou Garba</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Carrefour Central, Dosso</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#fde8e8;color:#c0392b;">Dosso</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ph-card">
+            <div class="ph-card-top">
+                <div class="ph-avatar" style="background:linear-gradient(135deg,#d68910,#f0a500);">PT</div>
+                <div class="ph-title">
+                    <div class="ph-name">Pharmacie Tahoua Nord</div>
+                    <div class="ph-district"><i class="bi bi-geo-alt"></i> District Tahoua I</div>
+                </div>
+                <span class="ph-status-badge active">Active</span>
+            </div>
+            <div class="ph-card-body">
+                <div class="ph-row"><i class="bi bi-telephone"></i> +227 20 61 09 55</div>
+                <div class="ph-row"><i class="bi bi-envelope"></i> tahoua@pharmanet.ne</div>
+                <div class="ph-row"><i class="bi bi-calendar3"></i> Ouverte le 11 fév 2020</div>
+                <div class="ph-row"><i class="bi bi-person-badge"></i> Dr. Zeinabou Sani</div>
+                <div class="ph-row"><i class="bi bi-pin-map"></i> Boulevard de l'Indépendance, Tahoua</div>
+            </div>
+            <div class="ph-card-footer">
+                <span class="ph-region-pill" style="background:#fef9e7;color:#d68910;">Tahoua</span>
+                <div class="ph-act-group">
+                    <button class="ph-act" title="Voir"><i class="bi bi-eye"></i></button>
+                    <button class="ph-act" title="Modifier"><i class="bi bi-pencil"></i></button>
+                    <button class="ph-act danger" title="Supprimer"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div> *@
+
+</div>
+
+
+@code {
+    private List<GeoPharma.Model.Entities.Pharmacy>? Pharmacies { get; set; } = new();
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = _contextFactory.CreateDbContext();
+        Pharmacies = await context.Pharmacies
+            .Include(r => r.Region)
+            .Include(m => m.Municipality)
+            .Include(d => d.Doctor)
+            .ToListAsync();
+    }
+
+    private void NavToDetailHandler(EventArgs args)
+    {
+        Navigation.NavigateTo("/pharmacy-detail");
+    }
+}

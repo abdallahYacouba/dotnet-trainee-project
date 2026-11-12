@@ -1,0 +1,99 @@
+/* ══════════════════════════════════════
+       DESIGN TOKENS — single source of truth
+    ══════════════════════════════════════ */
+:root {
+    /* layout */
+    --sidebar-w: 260px;
+    --nav-h: 48px;
+    /* brand blue */
+    --blue: #0a7c4e;
+    --blue-hover: #085e3a;
+    --blue-light: #e6f4ee;
+    --blue-badge: #d4eedf;
+    --blue-focus: #0fa366;
+    /* purple */
+    --purple: #6e5dc6;
+    --purple-light: #eae6ff;
+    --purple-border: #9c6ade;
+    --purple-dark: #403294;
+    /* green */
+    --green: #00875a;
+    --green-light: #e3fcef;
+    --green-dark: #006644;
+    /* notification dot */
+    --badge-blue: #0a7c4e;
+    /* star rating */
+    --star: #ff991f;
+    /* text scale */
+    --text-dark: #172b4d;
+    --text-mid: #44546f;
+    --text-soft: #626f86;
+    /* surfaces */
+    --surface: #ffffff;
+    --bg-page: #f4f5f7;
+    --bg-hover: #f1f2f4;
+    --bg-input: #f1f2f4;
+    /* borders */
+    --border: #e8ecf0;
+    --border-input: #c1c7d0;
+    --border-card: #e3e4e8;
+    --border-card-hover: #c8d2e0;
+    /* ── Font-size scale ── */
+    --fs-2xs: 11px; /* micro labels, sub-badges */
+    --fs-xs: 12px; /* small badges, captions */
+    --fs-sm: 13px; /* sub-items, secondary text */
+    --fs-base: 15px; /* body / nav items */
+    --fs-md: 16px; /* topnav inputs, buttons */
+    --fs-lg: 18px; /* icons, close btn */
+    --fs-xl: 20px; /* sidebar icons */
+    --fs-2xl: 22px; /* page title */
+    --fs-icon: 17px; /* inline search icons */
+    /**Setting**/
+    /* --primary: #0a7c4e;
+    --primary-h: #085e3a;
+    --primary-l: #e6f4ee;
+    --primary-ll: #d0ece0;
+    --primary-f: #0fa366;
+    --surface: #ffffff;
+    --bg: #f5f6fa;
+    --border: #e2e5ed;
+    --border2: #d0d4de;
+    --text: #1a2035;
+    --text2: #4a536b;
+    --text3: #8892aa;
+    --green: #00875a;
+    --green-l: #e0f5eb;
+    --green-d: #005c3a;
+    --red: #e53935;
+    --red-l: #fdecea;
+    --amber: #d68910;
+    --amber-l: #fff8e1;
+    --blue: #2980b9;
+    --blue-l: #e3f0fa;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --shadow: 0 1px 4px rgba(10,28,64,.07);
+    --shadow-md: 0 4px 18px rgba(10,28,64,.11);*/
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg-page);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.page-title {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    /* margin-bottom: 22px;*/
+    color: var(--text-dark);
+    outline: none;
+    border: none;
+}

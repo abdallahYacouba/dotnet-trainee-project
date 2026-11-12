@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Cours\\IdentityTokenJWT\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E5FCB2B9-36C3-4BF9-9BD8-E5047EA4266B}|IdentityTokenJWT\\IdentityTokenJWT.csproj|c:\\cours\\identitytokenjwt\\identitytokenjwt\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5FCB2B9-36C3-4BF9-9BD8-E5047EA4266B}|IdentityTokenJWT\\IdentityTokenJWT.csproj|solutionrelative:identitytokenjwt\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5FCB2B9-36C3-4BF9-9BD8-E5047EA4266B}|IdentityTokenJWT\\IdentityTokenJWT.csproj|c:\\cours\\identitytokenjwt\\identitytokenjwt\\data\\models\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5FCB2B9-36C3-4BF9-9BD8-E5047EA4266B}|IdentityTokenJWT\\IdentityTokenJWT.csproj|solutionrelative:identitytokenjwt\\data\\models\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterVM.cs",
+              "DocumentMoniker": "C:\\Cours\\IdentityTokenJWT\\IdentityTokenJWT\\Data\\Models\\RegisterVM.cs",
+              "RelativeDocumentMoniker": "IdentityTokenJWT\\Data\\Models\\RegisterVM.cs",
+              "ToolTip": "C:\\Cours\\IdentityTokenJWT\\IdentityTokenJWT\\Data\\Models\\RegisterVM.cs",
+              "RelativeToolTip": "IdentityTokenJWT\\Data\\Models\\RegisterVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T14:39:45.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "C:\\Cours\\IdentityTokenJWT\\IdentityTokenJWT\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "IdentityTokenJWT\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "C:\\Cours\\IdentityTokenJWT\\IdentityTokenJWT\\Controllers\\AuthenticationController.cs*",
+              "RelativeToolTip": "IdentityTokenJWT\\Controllers\\AuthenticationController.cs*",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAuwCQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T13:38:14.141Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

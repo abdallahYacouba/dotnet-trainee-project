@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\NET\\Cours\\AppDemo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CC501D11-CD0D-4EE3-8F64-0E9748401F0B}|BlogApp\\BlogApp.csproj|c:\\net\\cours\\appdemo\\blogapp\\model\\voiture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC501D11-CD0D-4EE3-8F64-0E9748401F0B}|BlogApp\\BlogApp.csproj|solutionrelative:blogapp\\model\\voiture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC501D11-CD0D-4EE3-8F64-0E9748401F0B}|BlogApp\\BlogApp.csproj|c:\\net\\cours\\appdemo\\blogapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC501D11-CD0D-4EE3-8F64-0E9748401F0B}|BlogApp\\BlogApp.csproj|solutionrelative:blogapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Voiture.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\AppDemo\\BlogApp\\Model\\Voiture.cs",
+              "RelativeDocumentMoniker": "BlogApp\\Model\\Voiture.cs",
+              "ToolTip": "C:\\NET\\Cours\\AppDemo\\BlogApp\\Model\\Voiture.cs",
+              "RelativeToolTip": "BlogApp\\Model\\Voiture.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T14:08:28.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\AppDemo\\BlogApp\\Program.cs",
+              "RelativeDocumentMoniker": "BlogApp\\Program.cs",
+              "ToolTip": "C:\\NET\\Cours\\AppDemo\\BlogApp\\Program.cs",
+              "RelativeToolTip": "BlogApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T14:08:21.254Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

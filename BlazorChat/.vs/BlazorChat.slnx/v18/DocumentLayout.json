@@ -1,0 +1,130 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\NET\\Cours\\BlazorChat\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1EA810-C0F7-4F33-AFD6-D6CD3AB71190}|BlazorChat\\BlazorChat.csproj|c:\\net\\cours\\blazorchat\\blazorchat\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1EA810-C0F7-4F33-AFD6-D6CD3AB71190}|BlazorChat\\BlazorChat.csproj|solutionrelative:blazorchat\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1EA810-C0F7-4F33-AFD6-D6CD3AB71190}|BlazorChat\\BlazorChat.csproj|c:\\net\\cours\\blazorchat\\blazorchat\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EA1EA810-C0F7-4F33-AFD6-D6CD3AB71190}|BlazorChat\\BlazorChat.csproj|solutionrelative:blazorchat\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1EA810-C0F7-4F33-AFD6-D6CD3AB71190}|BlazorChat\\BlazorChat.csproj|c:\\net\\cours\\blazorchat\\blazorchat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1EA810-C0F7-4F33-AFD6-D6CD3AB71190}|BlazorChat\\BlazorChat.csproj|solutionrelative:blazorchat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1EA810-C0F7-4F33-AFD6-D6CD3AB71190}|BlazorChat\\BlazorChat.csproj|c:\\net\\cours\\blazorchat\\blazorchat\\dashboardupdateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1EA810-C0F7-4F33-AFD6-D6CD3AB71190}|BlazorChat\\BlazorChat.csproj|solutionrelative:blazorchat\\dashboardupdateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1EA810-C0F7-4F33-AFD6-D6CD3AB71190}|BlazorChat\\BlazorChat.csproj|c:\\net\\cours\\blazorchat\\blazorchat\\taskupdateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1EA810-C0F7-4F33-AFD6-D6CD3AB71190}|BlazorChat\\BlazorChat.csproj|solutionrelative:blazorchat\\taskupdateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1EA810-C0F7-4F33-AFD6-D6CD3AB71190}|BlazorChat\\BlazorChat.csproj|c:\\net\\cours\\blazorchat\\blazorchat\\components\\pages\\livenotifications.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EA1EA810-C0F7-4F33-AFD6-D6CD3AB71190}|BlazorChat\\BlazorChat.csproj|solutionrelative:blazorchat\\components\\pages\\livenotifications.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\NET\\Cours\\BlazorChat\\BlazorChat\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "BlazorChat\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\NET\\Cours\\BlazorChat\\BlazorChat\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "BlazorChat\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAQwGEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T09:29:17.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DashboardUpdateService.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\BlazorChat\\BlazorChat\\DashboardUpdateService.cs",
+              "RelativeDocumentMoniker": "BlazorChat\\DashboardUpdateService.cs",
+              "ToolTip": "C:\\NET\\Cours\\BlazorChat\\BlazorChat\\DashboardUpdateService.cs",
+              "RelativeToolTip": "BlazorChat\\DashboardUpdateService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:27:51.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TaskUpdateService.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\BlazorChat\\BlazorChat\\TaskUpdateService.cs",
+              "RelativeDocumentMoniker": "BlazorChat\\TaskUpdateService.cs",
+              "ToolTip": "C:\\NET\\Cours\\BlazorChat\\BlazorChat\\TaskUpdateService.cs",
+              "RelativeToolTip": "BlazorChat\\TaskUpdateService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:25:21.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LiveNotifications.razor",
+              "DocumentMoniker": "C:\\NET\\Cours\\BlazorChat\\BlazorChat\\Components\\Pages\\LiveNotifications.razor",
+              "RelativeDocumentMoniker": "BlazorChat\\Components\\Pages\\LiveNotifications.razor",
+              "ToolTip": "C:\\NET\\Cours\\BlazorChat\\BlazorChat\\Components\\Pages\\LiveNotifications.razor",
+              "RelativeToolTip": "BlazorChat\\Components\\Pages\\LiveNotifications.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T09:22:47.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\BlazorChat\\BlazorChat\\Program.cs",
+              "RelativeDocumentMoniker": "BlazorChat\\Program.cs",
+              "ToolTip": "C:\\NET\\Cours\\BlazorChat\\BlazorChat\\Program.cs",
+              "RelativeToolTip": "BlazorChat\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:20:30.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NotificationHub.cs",
+              "DocumentMoniker": "C:\\NET\\Cours\\BlazorChat\\BlazorChat\\Hubs\\NotificationHub.cs",
+              "RelativeDocumentMoniker": "BlazorChat\\Hubs\\NotificationHub.cs",
+              "ToolTip": "C:\\NET\\Cours\\BlazorChat\\BlazorChat\\Hubs\\NotificationHub.cs",
+              "RelativeToolTip": "BlazorChat\\Hubs\\NotificationHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:19:41.215Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

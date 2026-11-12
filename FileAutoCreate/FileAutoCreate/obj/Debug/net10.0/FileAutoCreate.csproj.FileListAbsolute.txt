@@ -1,0 +1,14 @@
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\bin\Debug\net10.0\FileAutoCreate.exe
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\bin\Debug\net10.0\FileAutoCreate.deps.json
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\bin\Debug\net10.0\FileAutoCreate.runtimeconfig.json
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\bin\Debug\net10.0\FileAutoCreate.dll
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\bin\Debug\net10.0\FileAutoCreate.pdb
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\obj\Debug\net10.0\FileAutoCreate.GeneratedMSBuildEditorConfig.editorconfig
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\obj\Debug\net10.0\FileAutoCreate.AssemblyInfoInputs.cache
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\obj\Debug\net10.0\FileAutoCreate.AssemblyInfo.cs
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\obj\Debug\net10.0\FileAutoCreate.csproj.CoreCompileInputs.cache
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\obj\Debug\net10.0\FileAutoCreate.dll
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\obj\Debug\net10.0\refint\FileAutoCreate.dll
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\obj\Debug\net10.0\FileAutoCreate.pdb
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\obj\Debug\net10.0\FileAutoCreate.genruntimeconfig.cache
+C:\NET\Cours\FileAutoCreate\FileAutoCreate\obj\Debug\net10.0\ref\FileAutoCreate.dll

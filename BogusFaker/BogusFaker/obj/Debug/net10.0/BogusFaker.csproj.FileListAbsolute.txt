@@ -1,0 +1,17 @@
+C:\NET\Cours\BogusFaker\BogusFaker\bin\Debug\net10.0\BogusFaker.exe
+C:\NET\Cours\BogusFaker\BogusFaker\bin\Debug\net10.0\BogusFaker.deps.json
+C:\NET\Cours\BogusFaker\BogusFaker\bin\Debug\net10.0\BogusFaker.runtimeconfig.json
+C:\NET\Cours\BogusFaker\BogusFaker\bin\Debug\net10.0\BogusFaker.dll
+C:\NET\Cours\BogusFaker\BogusFaker\bin\Debug\net10.0\BogusFaker.pdb
+C:\NET\Cours\BogusFaker\BogusFaker\bin\Debug\net10.0\Bogus.dll
+C:\NET\Cours\BogusFaker\BogusFaker\obj\Debug\net10.0\BogusFaker.csproj.AssemblyReference.cache
+C:\NET\Cours\BogusFaker\BogusFaker\obj\Debug\net10.0\BogusFaker.GeneratedMSBuildEditorConfig.editorconfig
+C:\NET\Cours\BogusFaker\BogusFaker\obj\Debug\net10.0\BogusFaker.AssemblyInfoInputs.cache
+C:\NET\Cours\BogusFaker\BogusFaker\obj\Debug\net10.0\BogusFaker.AssemblyInfo.cs
+C:\NET\Cours\BogusFaker\BogusFaker\obj\Debug\net10.0\BogusFaker.csproj.CoreCompileInputs.cache
+C:\NET\Cours\BogusFaker\BogusFaker\obj\Debug\net10.0\BogusFaker.csproj.Up2Date
+C:\NET\Cours\BogusFaker\BogusFaker\obj\Debug\net10.0\BogusFaker.dll
+C:\NET\Cours\BogusFaker\BogusFaker\obj\Debug\net10.0\refint\BogusFaker.dll
+C:\NET\Cours\BogusFaker\BogusFaker\obj\Debug\net10.0\BogusFaker.pdb
+C:\NET\Cours\BogusFaker\BogusFaker\obj\Debug\net10.0\BogusFaker.genruntimeconfig.cache
+C:\NET\Cours\BogusFaker\BogusFaker\obj\Debug\net10.0\ref\BogusFaker.dll

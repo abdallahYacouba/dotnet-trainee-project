@@ -1,0 +1,240 @@
+﻿@page "/pharmacy-detail"
+
+<!-- Back -->
+<div class="mb-4">
+    <a href="#" class="back-link"><i class="bi bi-arrow-left"></i> Retour à la liste</a>
+</div>
+
+<!-- Profile Header -->
+<div class="profile-header mb-4">
+    <div class="profile-banner"></div>
+    <div class="profile-header-body">
+        <div class="profile-avatar-wrap">
+            <div class="profile-avatar" style="background:linear-gradient(135deg,var(--blue),#0fa366);">
+                <i class="bi bi-hospital-fill" style="font-size:var(--fs-xl);color:#fff;"></i>
+            </div>
+        </div>
+        <div class="profile-meta">
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+                <h1 class="profile-name">Pharmacie Centrale Niamey</h1>
+                <span class="profile-role-badge"><i class="bi bi-circle-fill" style="font-size:7px;"></i> Active</span>
+            </div>
+            <div class="d-flex align-items-center gap-4 mt-2 flex-wrap">
+                <span class="profile-sub"><i class="bi bi-geo-alt"></i> District Niamey I</span>
+                <span class="profile-sub"><i class="bi bi-calendar3"></i> Ouverte le 14 mars 2010</span>
+                <span class="profile-sub"><i class="bi bi-hash"></i> PHM-001</span>
+            </div>
+        </div>
+        <div class="profile-actions ms-auto">
+            <button class="profile-btn-edit"><i class="bi bi-pencil"></i> Modifier</button>
+            <button class="profile-btn-del"><i class="bi bi-trash3"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+
+    <!-- ── LEFT COLUMN ── -->
+    <div class="col-12 col-lg-8">
+
+        <!-- Informations générales -->
+        <div class="detail-card mb-4">
+            <div class="detail-card-header"><i class="bi bi-info-circle-fill"></i> Informations générales</div>
+            <div class="detail-card-body">
+
+                <div class="row g-0">
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-hash"></i> Identifiant</div>
+                            <div class="detail-value">PHM-001</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-shop"></i> Nom</div>
+                            <div class="detail-value">Pharmacie Centrale Niamey</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-geo"></i> District</div>
+                            <div class="detail-value">District Niamey I</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-calendar3"></i> Date d'ouverture</div>
+                            <div class="detail-value">14 mars 2010</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-file-earmark-text"></i> RCCM</div>
+                            <div class="detail-value">NI-NIA-01-2010-B12-00042</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-receipt"></i> NIF</div>
+                            <div class="detail-value">20101234567</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="detail-field" style="border-bottom:none;">
+                            <div class="detail-label"><i class="bi bi-pin-map"></i> Localisation / Adresse</div>
+                            <div class="detail-value">Rue du Sahel, Quartier Plateau, Niamey</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Contacts -->
+        <div class="detail-card mb-4">
+            <div class="detail-card-header"><i class="bi bi-telephone-fill"></i> Contacts</div>
+            <div class="detail-card-body">
+                <div class="row g-0">
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-telephone"></i> Téléphone principal</div>
+                            <div class="detail-value">
+                                <a href="tel:+22720734512" class="contact-link phone">+227 20 73 45 12</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-telephone"></i> Téléphone secondaire</div>
+                            <div class="detail-value">
+                                <a href="tel:+22720734599" class="contact-link phone">+227 20 73 45 99</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="detail-field" style="border-bottom:none;">
+                            <div class="detail-label"><i class="bi bi-envelope"></i> Email</div>
+                            <div class="detail-value">
+                                <a href="mailto:centrale@pharmanet.ne" class="contact-link email">centrale@pharmanet.ne</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Géolocalisation -->
+        <div class="detail-card">
+            <div class="detail-card-header"><i class="bi bi-geo-alt-fill"></i> Géolocalisation</div>
+            <div class="detail-card-body">
+                <div class="row g-0">
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-compass"></i> Latitude</div>
+                            <div class="detail-value">13.513700</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-compass"></i> Longitude</div>
+                            <div class="detail-value">2.109800</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="detail-field" style="border-bottom:none;">
+                            <div class="detail-label"><i class="bi bi-map"></i> Aperçu carte</div>
+                            <div class="map-static">
+                                <i class="bi bi-geo-alt-fill" style="font-size:var(--fs-xl);color:var(--blue);"></i>
+                                <span style="font-size:var(--fs-sm);color:var(--blue);font-weight:600;">13.51370, 2.10980</span>
+                                <a href="https://maps.google.com/?q=13.5137,2.1098" target="_blank" class="map-link">
+                                    <i class="bi bi-box-arrow-up-right"></i> Voir sur Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /left col -->
+    <!-- ── RIGHT COLUMN ── -->
+    <div class="col-12 col-lg-4">
+
+        <!-- Affectations -->
+        <div class="detail-card mb-4">
+            <div class="detail-card-header"><i class="bi bi-diagram-3-fill"></i> Affectations</div>
+            <div class="detail-card-body">
+                <div class="row g-0">
+                    <div class="col-12">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-geo-alt"></i> Région</div>
+                            <div class="detail-value">
+                                <span class="region-pill">Niamey</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="detail-field">
+                            <div class="detail-label"><i class="bi bi-building"></i> Commune</div>
+                            <div class="detail-value">Niamey I</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="detail-field" style="border-bottom:none;">
+                            <div class="detail-label"><i class="bi bi-person-badge"></i> Médecin responsable</div>
+                            <div class="detail-value">
+                                <div class="doctor-ref">
+                                    <div class="doctor-ref-avatar">MI</div>
+                                    <div>
+                                        <div style="font-weight:700;color:var(--text-dark);">Dr. Moussa Ibrahim</div>
+                                        <div style="font-size:var(--fs-xs);color:var(--text-soft);">Médecin Chef</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistiques rapides -->
+        @* <div class="detail-card mb-4">
+            <div class="detail-card-header"><i class="bi bi-bar-chart-fill"></i> Statistiques</div>
+            <div class="detail-card-body p-0">
+                <div class="stat-row">
+                    <div class="stat-icon" style="background:#e6f4ee;color:var(--blue);"><i class="bi bi-capsule"></i></div>
+                    <div class="stat-info"><div class="stat-value">1 248</div><div class="stat-label">Médicaments en stock</div></div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-icon" style="background:#fff3e0;color:#e67e22;"><i class="bi bi-cart3"></i></div>
+                    <div class="stat-info"><div class="stat-value">87</div><div class="stat-label">Commandes ce mois</div></div>
+                </div>
+                <div class="stat-row" style="border-bottom:none;">
+                    <div class="stat-icon" style="background:#fdecea;color:#e53935;"><i class="bi bi-exclamation-triangle"></i></div>
+                    <div class="stat-info"><div class="stat-value">12</div><div class="stat-label">Produits en rupture</div></div>
+                </div>
+            </div>
+        </div> *@
+
+        <!-- Actions -->
+        @* <div class="detail-card">
+            <div class="detail-card-header"><i class="bi bi-lightning-fill"></i> Actions rapides</div>
+            <div class="detail-card-body" style="padding:14px 18px;">
+                <div class="d-flex flex-column gap-2">
+                    <button class="profile-btn-edit w-100 justify-content-center"><i class="bi bi-pencil"></i> Modifier la fiche</button>
+                    <button class="quick-action-btn"><i class="bi bi-shield-check"></i> Gérer la garde</button>
+                    <button class="quick-action-btn"><i class="bi bi-box-seam"></i> Voir le stock</button>
+                    <button class="quick-action-btn danger"><i class="bi bi-trash3"></i> Supprimer</button>
+                </div>
+            </div>
+        </div> *@
+
+    </div><!-- /right col -->
+
+</div>
+
+
+
+@code {
+
+}

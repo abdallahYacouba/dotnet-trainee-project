@@ -1,0 +1,45 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "BlogApp",
+    "version": "1.0"
+  },
+  "paths": {
+    "/blog": {
+      "get": {
+        "tags": [
+          "BlogApp"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/blog/{id}": {
+      "delete": {
+        "tags": [
+          "BlogApp"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

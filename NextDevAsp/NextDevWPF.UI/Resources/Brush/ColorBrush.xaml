@@ -1,0 +1,99 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="PrimaryColor">#1D242E</Color>
+    <Color x:Key="SecondaryColor">#E5E6E7</Color>
+    <Color x:Key="BorderColor">#A9ADB2</Color>
+    <Color x:Key="BodyColor">#EDF1F5</Color>
+    <Color x:Key="HeaderBgColor">#F7FAFD</Color>
+    <Color x:Key="SideBarBgColor">#283342</Color>
+    <Color x:Key="SideBarActiveBgColor">#009099</Color>
+    <Color x:Key="AppLogoSectionBgColor">#1D242E</Color>
+
+    <Color x:Key="GreenBgColor">#A6DBCB</Color>
+    <Color x:Key="YellowBgColor">#F2E9AC</Color>
+    <Color x:Key="BlueBgColor">#A6D9F3</Color>
+    <Color x:Key="RedBgColor">#EEBEBE</Color>
+
+    <Color x:Key="GreenBorderColor">#01A768</Color>
+    <Color x:Key="YellowBorderColor">#FED600</Color>
+    <Color x:Key="BlueBorderColor">#03A9F5</Color>
+    <Color x:Key="RedBorderColor">#F0483E</Color>
+
+    <SolidColorBrush x:Key="Brush.Text.Primary" Color="{StaticResource PrimaryColor}"/>
+    <SolidColorBrush x:Key="Brush.Text.Secondary" Color="{StaticResource SecondaryColor}"/>
+    <SolidColorBrush x:Key="Brush.Border" Color="{StaticResource BorderColor}"/>
+    <SolidColorBrush x:Key="Brush.Body" Color="{StaticResource BodyColor}"/>
+    <SolidColorBrush x:Key="Brush.Header" Color="{StaticResource HeaderBgColor}"/>
+    <SolidColorBrush x:Key="Brush.SideBar" Color="{StaticResource SideBarBgColor}"/>
+    <SolidColorBrush x:Key="Brush.SideBar.Active" Color="{StaticResource SideBarActiveBgColor}"/>
+    <SolidColorBrush x:Key="Brush.SideBar.Logo.Section" Color="{StaticResource AppLogoSectionBgColor}"/>
+
+    <SolidColorBrush x:Key="Brush.Border.Green" Color="{StaticResource GreenBorderColor}"/>
+    <SolidColorBrush x:Key="Brush.Border.Yellow" Color="{StaticResource YellowBorderColor}"/>
+    <SolidColorBrush x:Key="Brush.Border.Blue" Color="{StaticResource BlueBorderColor}"/>
+    <SolidColorBrush x:Key="Brush.Border.Red" Color="{StaticResource RedBorderColor}"/>
+    
+    <SolidColorBrush x:Key="Brush.Green" Color="{StaticResource GreenBgColor}"/>
+    <SolidColorBrush x:Key="Brush.Yellow" Color="{StaticResource YellowBgColor}"/>
+    <SolidColorBrush x:Key="Brush.Blue" Color="{StaticResource BlueBgColor}"/>
+    <SolidColorBrush x:Key="Brush.Red" Color="{StaticResource RedBgColor}"/>
+
+    
+    
+    <Thickness x:Key="Thickness.ControlPadding">6</Thickness>
+    <Thickness x:Key="Thickness.ControlMargin">0,6,0,0</Thickness>
+    <CornerRadius x:Key="Radius.Control">4</CornerRadius>
+    <FontWeight x:Key="FontWeight.H">SemiBold</FontWeight>
+    
+
+    <Style x:Key="TextBlock.H1" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="FontWeight" Value="{DynamicResource FontWeight.H}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Brush.Text.Primary}"/>
+    </Style>
+
+    <Style x:Key="TextBlock.H2" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontWeight" Value="{DynamicResource FontWeight.H}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Brush.Text.Primary}"/>
+    </Style>
+
+    <Style x:Key="TextBlock.H3" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+
+    <Style x:Key="TextBlock.Bold.H3" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+
+    <Style x:Key="TextBlock.Muted.H3" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{DynamicResource Brush.Text.Secondary}"/>
+    </Style>
+
+    <Style x:Key="Tile" TargetType="Border">
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <Style TargetType="{x:Type Hyperlink}">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{StaticResource Brush.Text.Primary}" />
+        <Setter Property="TextDecorations" Value="None" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="TextDecorations" Value="Underline" />
+            </Trigger>
+            <!--<Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static GrayTextBrush}}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="true">
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>-->
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

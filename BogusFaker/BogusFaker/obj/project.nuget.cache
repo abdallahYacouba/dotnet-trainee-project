@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "j709gvjm0C4=",
+  "success": true,
+  "projectFilePath": "C:\\NET\\Cours\\BogusFaker\\BogusFaker\\BogusFaker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\GABERA\\.nuget\\packages\\bogus\\35.6.5\\bogus.35.6.5.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,179 @@
+﻿@page "/home"   
+
+
+<!-- Welcome row -->
+<div class="dash-welcome mb-4">
+    <div>
+        <h1 class="page-title">Tableau de bord</h1>
+        <p class="dash-sub">Bonjour, Administrateur — voici un aperçu de votre réseau PharmaNet</p>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+        <span class="dash-date"><i class="bi bi-calendar3"></i> Vendredi 20 mars 2026</span>
+        <button class="btn-create" style="border-radius:6px;height:34px;padding:0 14px;">
+            <i class="bi bi-plus-lg"></i> Ajouter
+        </button>
+    </div>
+</div>
+
+<!-- KPI cards -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-lg-3">
+        <div class="kpi-card">
+            <div class="kpi-icon" style="background:#e6f4ee;color:var(--blue);"><i class="bi bi-hospital-fill"></i></div>
+            <div class="kpi-value">48</div>
+            <div class="kpi-label">Pharmacies actives</div>
+            <div class="kpi-trend up"><i class="bi bi-arrow-up-short"></i> +3 ce mois</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="kpi-card">
+            <div class="kpi-icon" style="background:#fff3e0;color:#e67e22;"><i class="bi bi-capsule-pill"></i></div>
+            <div class="kpi-value">1 248</div>
+            <div class="kpi-label">Médicaments en stock</div>
+            <div class="kpi-trend down"><i class="bi bi-arrow-down-short"></i> -42 depuis hier</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="kpi-card">
+            <div class="kpi-icon" style="background:#fde8e8;color:#c0392b;"><i class="bi bi-exclamation-triangle-fill"></i></div>
+            <div class="kpi-value">12</div>
+            <div class="kpi-label">Ruptures de stock</div>
+            <div class="kpi-trend down"><i class="bi bi-arrow-down-short"></i> -2 aujourd'hui</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="kpi-card">
+            <div class="kpi-icon" style="background:#eae6ff;color:#6e5dc6;"><i class="bi bi-people-fill"></i></div>
+            <div class="kpi-value">24</div>
+            <div class="kpi-label">Médecins enregistrés</div>
+            <div class="kpi-trend up"><i class="bi bi-arrow-up-short"></i> +1 cette semaine</div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+
+    <!-- Pharmacies de garde -->
+    <div class="col-12 col-lg-5">
+        <div class="dash-card h-100">
+            <div class="dash-card-header">
+                <span><i class="bi bi-moon-stars-fill"></i> Pharmacies de garde</span>
+                <span class="dash-badge-green">Aujourd'hui</span>
+            </div>
+            <div class="dash-card-body p-0">
+                <div class="guard-row">
+                    <div class="guard-dot on"></div>
+                    <div class="guard-info"><div class="guard-name">Pharmacie Centrale Niamey</div><div class="guard-district">District Niamey I</div></div>
+                    <span class="guard-pill on">En garde</span>
+                </div>
+                <div class="guard-row">
+                    <div class="guard-dot on"></div>
+                    <div class="guard-info"><div class="guard-name">Pharmacie du Marché</div><div class="guard-district">District Maradi Centre</div></div>
+                    <span class="guard-pill on">En garde</span>
+                </div>
+                <div class="guard-row">
+                    <div class="guard-dot on"></div>
+                    <div class="guard-info"><div class="guard-name">Pharmacie Birni</div><div class="guard-district">District Birni N'Konni</div></div>
+                    <span class="guard-pill on">En garde</span>
+                </div>
+                <div class="guard-row" style="border-bottom:none;">
+                    <div class="guard-dot off"></div>
+                    <div class="guard-info"><div class="guard-name">Pharmacie Dosso Est</div><div class="guard-district">District Dosso</div></div>
+                    <span class="guard-pill off">Hors garde</span>
+                </div>
+            </div>
+            <div class="dash-card-footer">
+                <a href="#" class="dash-link">Voir tout <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alertes de stock -->
+    <div class="col-12 col-lg-7">
+        <div class="dash-card h-100">
+            <div class="dash-card-header">
+                <span><i class="bi bi-exclamation-triangle-fill" style="color:#e67e22;"></i> Alertes de stock</span>
+                <span class="dash-badge-red">12 alertes</span>
+            </div>
+            <div class="dash-card-body p-0">
+                <div class="alert-row">
+                    <div class="alert-icon rupture"><i class="bi bi-x-circle-fill"></i></div>
+                    <div class="alert-info"><div class="alert-name">Amoxicilline 250 mg</div><div class="alert-sub">Pharmacie Centrale — 0 unité restante</div></div>
+                    <span class="alert-tag rupture">Rupture</span>
+                </div>
+                <div class="alert-row">
+                    <div class="alert-icon critical"><i class="bi bi-exclamation-circle-fill"></i></div>
+                    <div class="alert-info"><div class="alert-name">Paracétamol 500 mg</div><div class="alert-sub">Pharmacie Maradi — 8 unités restantes</div></div>
+                    <span class="alert-tag critical">Critique</span>
+                </div>
+                <div class="alert-row">
+                    <div class="alert-icon expiry"><i class="bi bi-calendar-x-fill"></i></div>
+                    <div class="alert-info"><div class="alert-name">Métronidazole 250 mg</div><div class="alert-sub">Pharmacie Zinder — expire le 15 avr 2026</div></div>
+                    <span class="alert-tag expiry">Expiration</span>
+                </div>
+                <div class="alert-row" style="border-bottom:none;">
+                    <div class="alert-icon critical"><i class="bi bi-exclamation-circle-fill"></i></div>
+                    <div class="alert-info"><div class="alert-name">SRO — Réhydratation orale</div><div class="alert-sub">Pharmacie Dosso — 5 sachets restants</div></div>
+                    <span class="alert-tag critical">Critique</span>
+                </div>
+            </div>
+            <div class="dash-card-footer">
+                <a href="#" class="dash-link">Voir tout <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row g-3">
+
+    <!-- Activité récente -->
+    <div class="col-12 col-lg-12">
+        <div class="dash-card">
+            <div class="dash-card-header">
+                <span><i class="bi bi-clock-history"></i> Activité récente</span>
+            </div>
+            <div class="dash-card-body p-0">
+                <div class="activity-row">
+                    <div class="activity-icon" style="background:#e6f4ee;color:var(--blue);"><i class="bi bi-hospital-fill"></i></div>
+                    <div class="activity-info">
+                        <div class="activity-text">Nouvelle pharmacie ajoutée — <strong>Pharmacie Filingué</strong></div>
+                        <div class="activity-time">Il y a 2 heures</div>
+                    </div>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-icon" style="background:#fff3e0;color:#e67e22;"><i class="bi bi-person-plus-fill"></i></div>
+                    <div class="activity-info">
+                        <div class="activity-text">Médecin ajouté — <strong>Dr. Aïcha Moumouni</strong></div>
+                        <div class="activity-time">Il y a 5 heures</div>
+                    </div>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-icon" style="background:#fde8e8;color:#c0392b;"><i class="bi bi-exclamation-triangle-fill"></i></div>
+                    <div class="activity-info">
+                        <div class="activity-text">Alerte rupture — <strong>Amoxicilline</strong> à Niamey</div>
+                        <div class="activity-time">Il y a 8 heures</div>
+                    </div>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-icon" style="background:#eae6ff;color:#6e5dc6;"><i class="bi bi-cart-check-fill"></i></div>
+                    <div class="activity-info">
+                        <div class="activity-text">Commande #CMD-0087 livrée avec succès</div>
+                        <div class="activity-time">Hier, 14h32</div>
+                    </div>
+                </div>
+                <div class="activity-row" style="border-bottom:none;">
+                    <div class="activity-icon" style="background:#e3f5ff;color:#2980b9;"><i class="bi bi-gear-fill"></i></div>
+                    <div class="activity-info">
+                        <div class="activity-text">Paramètres mis à jour par <strong>Admin</strong></div>
+                        <div class="activity-time">Hier, 09h15</div>
+                    </div>
+                </div>
+            </div>
+            <div class="dash-card-footer">
+                <a href="#" class="dash-link">Voir tout <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+</div>

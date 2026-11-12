@@ -1,0 +1,232 @@
+﻿@page "/add-pharmacy"
+
+<h1 class="page-title">Créer une Pharmacie</h1>
+
+<form id="pharmacyForm" novalidate>
+    <div class="row g-4">
+
+        <!-- ── LEFT COLUMN ── -->
+        <div class="col-12 col-lg-8">
+
+            <!-- Card: Informations générales -->
+            <div class="form-card mb-4">
+                <div class="form-card-header">
+                    <i class="bi bi-info-circle-fill"></i> Informations générales
+                </div>
+                <div class="form-card-body">
+                    <div class="row g-3">
+
+                        <div class="col-12">
+                            <label class="form-label-custom" for="name">Nom de la pharmacie <span class="req">*</span></label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-shop input-icon"></i>
+                                <input type="text" id="name" class="form-input" placeholder="Ex : Pharmacie Centrale Niamey" required />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="form-label-custom" for="openingDate">Date d'ouverture <span class="req">*</span></label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-calendar3 input-icon"></i>
+                                <input type="date" id="openingDate" class="form-input" required />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="form-label-custom" for="district">District</label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-geo input-icon"></i>
+                                <input type="text" id="district" class="form-input" placeholder="Ex : District Niamey 1" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="form-label-custom" for="rccm">RCCM <span class="req">*</span></label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-file-earmark-text input-icon"></i>
+                                <input type="text" id="rccm" class="form-input" placeholder="Ex : NI-NIA-01-2024-B12-00123" required />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="form-label-custom" for="nif">NIF</label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-receipt input-icon"></i>
+                                <input type="text" id="nif" class="form-input" placeholder="Ex : 20241234567" />
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label-custom" for="localisation">Localisation / Adresse</label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-pin-map input-icon"></i>
+                                <input type="text" id="localisation" class="form-input" placeholder="Ex : Rue du Sahel, Quartier Plateau, Niamey" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Contacts -->
+            <div class="form-card mb-4">
+                <div class="form-card-header">
+                    <i class="bi bi-telephone-fill"></i> Contacts
+                </div>
+                <div class="form-card-body">
+                    <div class="row g-3">
+
+                        <div class="col-sm-6">
+                            <label class="form-label-custom" for="phone1">Téléphone principal <span class="req">*</span></label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-telephone input-icon"></i>
+                                <input type="tel" id="phone1" class="form-input" placeholder="+227 XX XX XX XX" required />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="form-label-custom" for="phone2">Téléphone secondaire</label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-telephone input-icon"></i>
+                                <input type="tel" id="phone2" class="form-input" placeholder="+227 XX XX XX XX" />
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label-custom" for="email">Adresse email</label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-envelope input-icon"></i>
+                                <input type="email" id="email" class="form-input" placeholder="pharmacie@exemple.com" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Géolocalisation -->
+            <div class="form-card mb-4">
+                <div class="form-card-header">
+                    <i class="bi bi-geo-alt-fill"></i> Géolocalisation
+                </div>
+                <div class="form-card-body">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-sm-5">
+                            <label class="form-label-custom" for="latitude">Latitude</label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-compass input-icon"></i>
+                                <input type="number" step="any" id="latitude" class="form-input" placeholder="13.5137" />
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <label class="form-label-custom" for="longitude">Longitude</label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-compass input-icon"></i>
+                                <input type="number" step="any" id="longitude" class="form-input" placeholder="2.1098" />
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn-locate" onclick="locateMe()" title="Ma position">
+                                <i class="bi bi-crosshair2"></i> Localiser
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Mini map preview placeholder -->
+                    <div class="map-preview mt-3" id="mapPreview">
+                        <i class="bi bi-map" style="font-size:var(--fs-2xl);color:var(--text-soft);"></i>
+                        <span style="font-size:var(--fs-sm);color:var(--text-soft);margin-top:6px;">Entrez des coordonnées pour prévisualiser</span>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /left col -->
+        <!-- ── RIGHT COLUMN ── -->
+        <div class="col-12 col-lg-4">
+
+            <!-- Card: Affectations -->
+            <div class="form-card mb-4">
+                <div class="form-card-header">
+                    <i class="bi bi-diagram-3-fill"></i> Affectations
+                </div>
+                <div class="form-card-body">
+                    <div class="d-flex flex-column gap-3">
+
+                        <div>
+                            <label class="form-label-custom" for="regionId">Région <span class="req">*</span></label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-geo-alt input-icon"></i>
+                                <select id="regionId" class="form-input" required>
+                                    <option value="">— Sélectionner —</option>
+                                    <option value="niamey">Niamey</option>
+                                    <option value="agadez">Agadez</option>
+                                    <option value="diffa">Diffa</option>
+                                    <option value="dosso">Dosso</option>
+                                    <option value="maradi">Maradi</option>
+                                    <option value="tahoua">Tahoua</option>
+                                    <option value="tillaberi">Tillabéri</option>
+                                    <option value="zinder">Zinder</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="form-label-custom" for="municipalityId">Commune <span class="req">*</span></label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-building input-icon"></i>
+                                <select id="municipalityId" class="form-input" required>
+                                    <option value="">— Sélectionner une région d'abord —</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="form-label-custom" for="doctorId">Médecin responsable</label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-person-badge input-icon"></i>
+                                <select id="doctorId" class="form-input">
+                                    <option value="">— Sélectionner —</option>
+                                    <option value="d1">Dr. Moussa Ibrahim</option>
+                                    <option value="d2">Dr. Fatoumata Diallo</option>
+                                    <option value="d3">Dr. Abdou Mahamane</option>
+                                    <option value="d4">Dr. Halimatou Sidibe</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Récapitulatif -->
+            <div class="form-card summary-card mb-4">
+                <div class="form-card-header">
+                    <i class="bi bi-clipboard2-check-fill"></i> Récapitulatif
+                </div>
+                <div class="form-card-body">
+                    <ul class="summary-list" id="summaryList">
+                        <li class="summary-row empty-row"><i class="bi bi-info-circle"></i> Aucune donnée saisie</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="d-flex flex-column gap-2">
+                <button type="submit" class="btn-submit" form="pharmacyForm">
+                    <i class="bi bi-check-circle-fill"></i> Enregistrer la pharmacie
+                </button>
+                <button type="button" class="btn-secondary-action" onclick="resetForm()">
+                    <i class="bi bi-arrow-counterclockwise"></i> Réinitialiser
+                </button>
+                <a href="#" class="btn-cancel-action">
+                    <i class="bi bi-x-circle"></i> Annuler
+                </a>
+            </div>
+
+        </div><!-- /right col -->
+
+    </div><!-- /row -->
+</form>
+
+@code {
+
+}

@@ -1,0 +1,144 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\NET\\Cours\\GeoPharma\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|c:\\net\\cours\\geopharma\\geopharma\\pages\\doctors\\doctormain.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|solutionrelative:geopharma\\pages\\doctors\\doctormain.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|c:\\net\\cours\\geopharma\\geopharma\\pages\\doctors\\doctordetail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|solutionrelative:geopharma\\pages\\doctors\\doctordetail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|c:\\net\\cours\\geopharma\\geopharma\\pages\\doctors\\adddoctor.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|solutionrelative:geopharma\\pages\\doctors\\adddoctor.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|c:\\net\\cours\\geopharma\\geopharma\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|solutionrelative:geopharma\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|c:\\net\\cours\\geopharma\\geopharma\\pages\\pharmaces\\pharmacymain.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|solutionrelative:geopharma\\pages\\pharmaces\\pharmacymain.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|c:\\net\\cours\\geopharma\\geopharma\\pages\\pharmaces\\pharmacydetail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|solutionrelative:geopharma\\pages\\pharmaces\\pharmacydetail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|c:\\net\\cours\\geopharma\\geopharma\\layout\\loginlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F103EBAE-B9B2-896E-2F31-EB53936FD61C}|GeoPharma\\GeoPharma.csproj|solutionrelative:geopharma\\layout\\loginlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DoctorMain.razor",
+              "DocumentMoniker": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Pages\\Doctors\\DoctorMain.razor",
+              "RelativeDocumentMoniker": "GeoPharma\\Pages\\Doctors\\DoctorMain.razor",
+              "ToolTip": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Pages\\Doctors\\DoctorMain.razor",
+              "RelativeToolTip": "GeoPharma\\Pages\\Doctors\\DoctorMain.razor",
+              "ViewState": "AgIAAEEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T11:58:53.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DoctorDetail.razor",
+              "DocumentMoniker": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Pages\\Doctors\\DoctorDetail.razor",
+              "RelativeDocumentMoniker": "GeoPharma\\Pages\\Doctors\\DoctorDetail.razor",
+              "ToolTip": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Pages\\Doctors\\DoctorDetail.razor",
+              "RelativeToolTip": "GeoPharma\\Pages\\Doctors\\DoctorDetail.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T11:58:51.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddDoctor.razor",
+              "DocumentMoniker": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Pages\\Doctors\\AddDoctor.razor",
+              "RelativeDocumentMoniker": "GeoPharma\\Pages\\Doctors\\AddDoctor.razor",
+              "ToolTip": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Pages\\Doctors\\AddDoctor.razor",
+              "RelativeToolTip": "GeoPharma\\Pages\\Doctors\\AddDoctor.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T11:58:49.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PharmacyMain.razor",
+              "DocumentMoniker": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Pages\\Pharmaces\\PharmacyMain.razor",
+              "RelativeDocumentMoniker": "GeoPharma\\Pages\\Pharmaces\\PharmacyMain.razor",
+              "ToolTip": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Pages\\Pharmaces\\PharmacyMain.razor",
+              "RelativeToolTip": "GeoPharma\\Pages\\Pharmaces\\PharmacyMain.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T11:54:49.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PharmacyDetail.razor",
+              "DocumentMoniker": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Pages\\Pharmaces\\PharmacyDetail.razor",
+              "RelativeDocumentMoniker": "GeoPharma\\Pages\\Pharmaces\\PharmacyDetail.razor",
+              "ToolTip": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Pages\\Pharmaces\\PharmacyDetail.razor",
+              "RelativeToolTip": "GeoPharma\\Pages\\Pharmaces\\PharmacyDetail.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T11:54:48.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginLayout.razor",
+              "DocumentMoniker": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Layout\\LoginLayout.razor",
+              "RelativeDocumentMoniker": "GeoPharma\\Layout\\LoginLayout.razor",
+              "ToolTip": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Layout\\LoginLayout.razor",
+              "RelativeToolTip": "GeoPharma\\Layout\\LoginLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T11:54:41.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "GeoPharma\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\NET\\Cours\\GeoPharma\\GeoPharma\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "GeoPharma\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T11:54:21.8Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

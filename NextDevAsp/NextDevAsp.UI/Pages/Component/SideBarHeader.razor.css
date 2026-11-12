@@ -1,0 +1,26 @@
+﻿.search-container {
+    height: 60px;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--wa-border);
+    background-color: var(--wa-panel-header);
+}
+
+.search-input {
+    background-color: var(--wa-search-bg);
+    border: none;
+    border-radius: 8px;
+    color: var(--wa-text-primary);
+    font-size: 0.9rem;
+    padding-left: 15px;
+}
+
+.search-input::placeholder {
+    color: var(--wa-text-secondary);
+}
+
+.search-input:focus {
+    background-color: var(--wa-search-bg);
+    color: var(--wa-text-primary);
+    box-shadow: none;
+}
+
